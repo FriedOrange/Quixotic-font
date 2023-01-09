@@ -1,1 +1,1 @@
-"# Quixotic" 
+# Quixotic
