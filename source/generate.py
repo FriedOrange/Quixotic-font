@@ -7,8 +7,8 @@ CAP_HEIGHT = 800
 # ASPECT_RATIO = sys.argv[1]
 ASPECT_RATIO = -(1 - math.sqrt(5)) / 2
 # SEGMENT_THICKNESS = sys.argv[2]
-SEGMENT_THICKNESS = 80
-SEGMENT_GAP = 10
+SEGMENT_THICKNESS = 75
+SEGMENT_GAP = 15
 CHARACTER_GAP = 200
 VERTICAL_BALANCE_FACTOR = 0.5
 
@@ -121,7 +121,7 @@ def main():
 	font.createChar(-1, "segment-b")
 	font["segment-b"].addReference("segment-e", (1, 0, 0, 1, glyph_width - SEGMENT_THICKNESS, vertical_midpoint - SEGMENT_THICKNESS // 2))
 	font.createChar(-1, "segment-c")
-	font["segment-b"].addReference("segment-e", (1, 0, 0, 1, glyph_width - SEGMENT_THICKNESS, 0))
+	font["segment-c"].addReference("segment-e", (1, 0, 0, 1, glyph_width - SEGMENT_THICKNESS, 0))
 	font.createChar(-1, "segment-f")
 	font["segment-f"].addReference("segment-e", (1, 0, 0, 1, 0, vertical_midpoint - SEGMENT_THICKNESS // 2))
 	font.createChar(-1, "segment-h")
