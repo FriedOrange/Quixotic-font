@@ -90,6 +90,18 @@ def main():
 	pen = None
 	font["segment-e"].width = width
 
+	font.createChar(-1, "segment-g")
+	pen = font["segment-g"].glyphPen()
+	pen.moveTo(0, SEGMENT_THICKNESS // 2)
+	pen.lineTo(SEGMENT_THICKNESS // 2, SEGMENT_THICKNESS)
+	pen.lineTo(width // 2 - SEGMENT_THICKNESS // 2 -  corner_gap, SEGMENT_THICKNESS)
+	pen.lineTo(width // 2 - corner_gap, SEGMENT_THICKNESS // 2)
+	pen.lineTo(width // 2 - SEGMENT_THICKNESS // 2 -  corner_gap, 0)
+	pen.lineTo(SEGMENT_THICKNESS // 2, 0)
+	pen.closePath()
+	pen = None
+	font["segment-g"].width = width
+
 	# create test glyph with all segments
 	font.createChar(-1, "test")
 	font["test"].addReference("segment-d", (1, 0, 0, 1, 0, 0))
