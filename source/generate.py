@@ -65,7 +65,7 @@ def main():
 	corner_gap = int(math.sqrt(SEGMENT_GAP**2 / 2))
 	vertical_midpoint = CAP_HEIGHT * VERTICAL_BALANCE_FACTOR
 
-	# draw individual segments
+	# draw unique segments
 	font.createChar(-1, "segment-d")
 	pen = font["segment-d"].glyphPen()
 	pen.moveTo(side_bearing + SEGMENT_THICKNESS // 2 + corner_gap, SEGMENT_THICKNESS // 2)
@@ -89,6 +89,12 @@ def main():
 	pen.closePath()
 	pen = None
 	font["segment-e"].width = width
+
+	# create test glyph with all segments
+	font.createChar(-1, "test")
+	font["test"].addReference("segment-d", (1, 0, 0, 1, 0, 0))
+	font["test"].addReference("segment-e", (1, 0, 0, 1, 0, 0))
+	font["test"].width = width
 
 	# finished
 	font.save("source\\temp\\temp.sfd")
