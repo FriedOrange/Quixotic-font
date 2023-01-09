@@ -6,7 +6,7 @@ import fontforge
 EM_SIZE = 1000
 CAP_HEIGHT = 800
 # ASPECT_RATIO = sys.argv[1]
-ASPECT_RATIO = 0.5
+ASPECT_RATIO = -(1 - math.sqrt(5)) / 2
 # SEGMENT_THICKNESS = sys.argv[2]
 SEGMENT_THICKNESS = 80
 SEGMENT_GAP = 20
