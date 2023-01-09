@@ -1,1 +1,1 @@
-fontforge -script generate.py
+fontforge -script source\generate.py
