@@ -94,7 +94,7 @@ def main():
 	pen = font["segment-g"].glyphPen()
 	pen.moveTo(0, SEGMENT_THICKNESS // 2)
 	pen.lineTo(SEGMENT_THICKNESS // 2, SEGMENT_THICKNESS)
-	pen.lineTo(width // 2 - SEGMENT_THICKNESS // 2 -  corner_gap, SEGMENT_THICKNESS)
+	pen.lineTo(width // 2 - SEGMENT_THICKNESS // 2 - corner_gap, SEGMENT_THICKNESS)
 	pen.lineTo(width // 2 - corner_gap, SEGMENT_THICKNESS // 2)
 	pen.lineTo(width // 2 - SEGMENT_THICKNESS // 2 -  corner_gap, 0)
 	pen.lineTo(SEGMENT_THICKNESS // 2, 0)
