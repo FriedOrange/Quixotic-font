@@ -67,6 +67,22 @@ def main():
 	vertical_midpoint = int(CAP_HEIGHT * VERTICAL_BALANCE_FACTOR)
 	horizontal_midpoint = advance_width // 2
 
+	# draw .notdef
+	font.createChar(-1, ".notdef")
+	pen = font[".notdef"].glyphPen()
+	pen.moveTo(side_bearing, 0)
+	pen.lineTo(side_bearing, CAP_HEIGHT)
+	pen.lineTo(side_bearing + glyph_width, CAP_HEIGHT)
+	pen.lineTo(side_bearing + glyph_width, 0)
+	pen.closePath()
+	pen.moveTo(side_bearing + SEGMENT_THICKNESS, SEGMENT_THICKNESS)
+	pen.lineTo(side_bearing + glyph_width - SEGMENT_THICKNESS, SEGMENT_THICKNESS)
+	pen.lineTo(side_bearing + glyph_width - SEGMENT_THICKNESS, CAP_HEIGHT - SEGMENT_THICKNESS)
+	pen.lineTo(side_bearing + SEGMENT_THICKNESS, CAP_HEIGHT - SEGMENT_THICKNESS)
+	pen.closePath()
+	pen = None
+	font[".notdef"].width = advance_width
+
 	# draw unique segments
 	font.createChar(-1, "segment-d")
 	pen = font["segment-d"].glyphPen()
@@ -78,7 +94,6 @@ def main():
 	pen.lineTo(side_bearing + SEGMENT_THICKNESS + corner_gap, 0)
 	pen.closePath()
 	pen = None
-	font["segment-d"].width = advance_width
 
 	font.createChar(-1, "segment-e")
 	pen = font["segment-e"].glyphPen()
@@ -90,7 +105,6 @@ def main():
 	pen.lineTo(side_bearing + SEGMENT_THICKNESS, SEGMENT_THICKNESS + corner_gap)
 	pen.closePath()
 	pen = None
-	font["segment-e"].width = advance_width
 
 	font.createChar(-1, "segment-g")
 	pen = font["segment-g"].glyphPen()
@@ -102,7 +116,6 @@ def main():
 	pen.lineTo(side_bearing + SEGMENT_THICKNESS + corner_gap, vertical_midpoint - SEGMENT_THICKNESS // 2)
 	pen.closePath()
 	pen = None
-	font["segment-g"].width = advance_width
 
 	font.createChar(-1, "segment-l")
 	pen = font["segment-l"].glyphPen()
@@ -113,7 +126,17 @@ def main():
 	pen.lineTo(horizontal_midpoint + SEGMENT_THICKNESS // 2, SEGMENT_THICKNESS + SEGMENT_GAP)
 	pen.closePath()
 	pen = None
-	font["segment-l"].width = advance_width
+
+	# font.createChar(-1, "segment-k")
+	# pen = font["segment=-k"].glyphPen()
+	# pen.moveTo(0, 0)
+	# pen.lineTo()
+	# pen.lineTo()
+	# pen.lineTo()
+	# pen.lineTo()
+	# pen.lineTo()
+	# pen.closePath()
+	# pen = None
 
 	# add other segments with references
 	font.createChar(-1, "segment-a")
