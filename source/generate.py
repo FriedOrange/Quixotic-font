@@ -6,14 +6,17 @@ import fontforge
 EM_SIZE = 1000
 CAP_HEIGHT = 800
 # ASPECT_RATIO = sys.argv[1]
-ASPECT_RATIO = -(1 - math.sqrt(5)) / 2
+# ASPECT_RATIO = -(1 - math.sqrt(5)) / 2
+ASPECT_RATIO = 0.5
 # SEGMENT_THICKNESS = sys.argv[2]
-SEGMENT_THICKNESS = 60
-SEGMENT_GAP = 20
+SEGMENT_THICKNESS = 56 # 56 good for 14 segment
+SEGMENT_GAP = 16
 CHARACTER_GAP = 200
 
-SEGMENT_DEFINITIONS = {
+DEFINITIONS_14 = {
 	"space": "",
+	"exclam": "il",
+	"period": "r",
 	"zero": "abcdef",
 	"one": "bc",
 	"two": "abgned",
@@ -50,7 +53,7 @@ SEGMENT_DEFINITIONS = {
 	"X": "hjkm",
 	"Y": "hjl",
 	"Z": "ajkd",
-	"test": "abcdefghijklmn"
+	"test": "abcdefghijklmnr"
 }
 
 def main():
@@ -58,7 +61,6 @@ def main():
 	# initialise font
 	font = fontforge.font()
 	font.encoding = "UnicodeFull"
-	font.encoding = "compacted"
 	font.em = EM_SIZE
 
 	# calculate parameters
@@ -71,8 +73,10 @@ def main():
 	half_thickness = round(SEGMENT_THICKNESS / 2)
 	quadrant_w = glyph_width / 2 - 1.5 * SEGMENT_THICKNESS - 2 * SEGMENT_GAP
 	quadrant_h = vertical_midpoint - 1.5 * SEGMENT_THICKNESS - 2 * SEGMENT_GAP
-	diagonal_x_offset = SEGMENT_THICKNESS / 1.2 * (1 - ASPECT_RATIO)
-	diagonal_y_offset = SEGMENT_THICKNESS * 3.6 * (1 - ASPECT_RATIO)
+	# diagonal_x_offset = round(SEGMENT_THICKNESS * 0.2 + SEGMENT_THICKNESS * ASPECT_RATIO * 0.2) # perfect for golden ratio width
+	# diagonal_y_offset = round(SEGMENT_THICKNESS * 4 * (1 - ASPECT_RATIO)) # perfect for golden ratio width
+	diagonal_x_offset = round(SEGMENT_THICKNESS * 0.1 + SEGMENT_THICKNESS * ASPECT_RATIO * 0.3)
+	diagonal_y_offset = round(SEGMENT_THICKNESS * 4.1 * (1 - ASPECT_RATIO))
 
 	# draw .notdef
 	font.createChar(-1, ".notdef")
@@ -146,6 +150,12 @@ def main():
 	pen = None
 	font["segment-k"].transform((1, 0, 0, 1, side_bearing + SEGMENT_THICKNESS + SEGMENT_GAP, SEGMENT_THICKNESS + SEGMENT_GAP))
 
+	font.createChar(-1, "segment-r")
+	circle = fontforge.unitShape(0) # creates a unit circle
+	circle.draw(font["segment-r"].glyphPen()) # draws the circle into the glyph, replacing previous outlines
+	font["segment-r"].transform((SEGMENT_THICKNESS * 0.75, 0.0, 0.0, SEGMENT_THICKNESS * 0.75, advance_width, SEGMENT_THICKNESS * 0.625))
+	font["segment-r"].round()
+
 	# add other segments with references
 	font.createChar(-1, "segment-a")
 	font["segment-a"].addReference("segment-d", (1, 0, 0, 1, 0, CAP_HEIGHT - SEGMENT_THICKNESS))
@@ -173,11 +183,16 @@ def main():
 	font["segment-n"].addReference("segment-g", (1, 0, 0, 1, glyph_width // 2 - half_thickness, 0))
 
 	# add defined glyphs
-	for glyph in SEGMENT_DEFINITIONS.keys():
+	for glyph in DEFINITIONS_14.keys():
 		font.createChar(fontforge.unicodeFromName(glyph), glyph)
-		for x in SEGMENT_DEFINITIONS[glyph]:
+		for x in DEFINITIONS_14[glyph]:
 			font[glyph].addReference("segment-" + x, (1, 0, 0, 1, 0, 0))
 		font[glyph].width = advance_width
+
+	# exception for width of full stop
+	# font["period"].width = 0
+	font["period"].transform((1, 0, 0, 1, -advance_width, 0))
+	# font["period"].left_side_bearing = int(-(SEGMENT_THICKNESS * 0.75))
 
 	# finished
 	font.save("source\\temp\\temp.sfd")
