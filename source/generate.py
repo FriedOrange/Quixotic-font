@@ -45,7 +45,7 @@ SEGMENT_DEFINITIONS = {
 	"less": "jgm",
 	"equal": "gnd",
 	"greater": "hnk",
-	"question": "abnger",
+	"question": "abnge",
 	"at": "inbafed",
 	"A": "abcefgn",
 	"B": "abcdnil",
