@@ -6,10 +6,9 @@ import fontforge
 EM_SIZE = 1000
 CAP_HEIGHT = 800
 # ASPECT_RATIO = sys.argv[1]
-# ASPECT_RATIO = -(1 - math.sqrt(5)) / 2
-ASPECT_RATIO = 0.5
+ASPECT_RATIO = -(1 - math.sqrt(5)) / 2
 # SEGMENT_THICKNESS = sys.argv[2]
-SEGMENT_THICKNESS = 50
+SEGMENT_THICKNESS = 60
 SEGMENT_GAP = 20
 CHARACTER_GAP = 200
 
@@ -72,7 +71,7 @@ def main():
 	half_thickness = round(SEGMENT_THICKNESS / 2)
 	quadrant_w = glyph_width / 2 - 1.5 * SEGMENT_THICKNESS - 2 * SEGMENT_GAP
 	quadrant_h = vertical_midpoint - 1.5 * SEGMENT_THICKNESS - 2 * SEGMENT_GAP
-	diagonal_x_offset = SEGMENT_THICKNESS / 1.1 * (1 - ASPECT_RATIO)
+	diagonal_x_offset = SEGMENT_THICKNESS / 1.2 * (1 - ASPECT_RATIO)
 	diagonal_y_offset = SEGMENT_THICKNESS * 3.6 * (1 - ASPECT_RATIO)
 
 	# draw .notdef
