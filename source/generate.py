@@ -13,10 +13,23 @@ SEGMENT_THICKNESS = 56 # 56 good for 14 segment
 SEGMENT_GAP = 16
 CHARACTER_GAP = 200
 
-DEFINITIONS_14 = {
+SEGMENT_DEFINITIONS = {
 	"space": "",
-	"exclam": "il",
-	"period": "r",
+	"exclam": "bcr",
+	"quotedbl": "fi",
+	"numbersign": "fielgnd",
+	"dollar": "afgncdil",
+	"percent": "kjfc",
+	"ampersand": "mhajged",
+	"quotesingle": "i",
+	"parenleft": "jm",
+	"parenright": "hk",
+	"asterisk": "ilgnhmkj",
+	"plus": "ilgn",
+	"comma": "k",
+	"hyphen": "gn",
+	"period": "l",
+	"slash": "kj",
 	"zero": "abcdef",
 	"one": "bc",
 	"two": "abgned",
@@ -27,6 +40,13 @@ DEFINITIONS_14 = {
 	"seven": "abc",
 	"eight": "abcdefgn",
 	"nine": "gnfabcd",
+	"colon": "il",
+	"semicolon": "ik",
+	"less": "jgm",
+	"equal": "gnd",
+	"greater": "hnk",
+	"question": "abnger",
+	"at": "inbafed",
 	"A": "abcefgn",
 	"B": "abcdnil",
 	"C": "afed",
@@ -53,6 +73,12 @@ DEFINITIONS_14 = {
 	"X": "hjkm",
 	"Y": "hjl",
 	"Z": "ajkd",
+	"bracketleft": "ahkd",
+	"backslash": "hm",
+	"bracketright": "ajmd",
+	"asciicircum": "jb",
+	"underscore": "d",
+	"grave": "h",
 	"test": "abcdefghijklmnr"
 }
 
@@ -183,16 +209,14 @@ def main():
 	font["segment-n"].addReference("segment-g", (1, 0, 0, 1, glyph_width // 2 - half_thickness, 0))
 
 	# add defined glyphs
-	for glyph in DEFINITIONS_14.keys():
+	for glyph in SEGMENT_DEFINITIONS.keys():
 		font.createChar(fontforge.unicodeFromName(glyph), glyph)
-		for x in DEFINITIONS_14[glyph]:
+		for x in SEGMENT_DEFINITIONS[glyph]:
 			font[glyph].addReference("segment-" + x, (1, 0, 0, 1, 0, 0))
 		font[glyph].width = advance_width
 
 	# exception for width of full stop
-	# font["period"].width = 0
-	font["period"].transform((1, 0, 0, 1, -advance_width, 0))
-	# font["period"].left_side_bearing = int(-(SEGMENT_THICKNESS * 0.75))
+	# font["period"].transform((1, 0, 0, 1, -advance_width, 0))
 
 	# finished
 	font.save("source\\temp\\temp.sfd")
