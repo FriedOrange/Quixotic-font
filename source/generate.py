@@ -79,6 +79,36 @@ SEGMENT_DEFINITIONS = {
 	"asciicircum": "jb",
 	"underscore": "d",
 	"grave": "h",
+	"a": "abgnedc",
+	"b": "fedcgn",
+	"c": "gned",
+	"d": "egndcb",
+	"e": "gnbafed",
+	"f": "afeg",
+	"g": "afgnbcd",
+	"h": "fegnc",
+	"i": "l",
+	"j": "bcd",
+	"k": "fegjnc",
+	"l": "fed",
+	"m": "eglnc",
+	"n": "egnc",
+	"o": "gnedc",
+	"p": "feabgn",
+	"q": "afgnbc",
+	"r": "egn",
+	"s": "afgncd",
+	"t": "fedgn",
+	"u": "edc",
+	"v": "ek",
+	"w": "ekmc",
+	"x": "hjkm",
+	"y": "fgnbcd",
+	"z": "gnkd",
+	"braceleft": "ahgkd",
+	"bar": "il",
+	"braceright": "ajnmd",
+	"asciitilde": "fhj",
 	"test": "abcdefghijklmnr"
 }
 
@@ -101,7 +131,8 @@ def main():
 	quadrant_h = vertical_midpoint - 1.5 * SEGMENT_THICKNESS - 2 * SEGMENT_GAP
 	# diagonal_x_offset = round(SEGMENT_THICKNESS * 0.2 + SEGMENT_THICKNESS * ASPECT_RATIO * 0.2) # perfect for golden ratio width
 	# diagonal_y_offset = round(SEGMENT_THICKNESS * 4 * (1 - ASPECT_RATIO)) # perfect for golden ratio width
-	diagonal_x_offset = round(SEGMENT_THICKNESS * 0.1 + SEGMENT_THICKNESS * ASPECT_RATIO * 0.3)
+	# diagonal_x_offset = round(SEGMENT_THICKNESS * 0.1 + SEGMENT_THICKNESS * ASPECT_RATIO * 0.3)
+	diagonal_x_offset = SEGMENT_GAP // 2
 	diagonal_y_offset = round(SEGMENT_THICKNESS * 4.1 * (1 - ASPECT_RATIO))
 
 	# draw .notdef
