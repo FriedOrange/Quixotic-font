@@ -151,7 +151,7 @@ for glyph, segments in segment_definitions:
 	else: # for glyphs built up from segments
 		for x in segments:
 			font[glyph].addReference("segment-" + x, (1, 0, 0, 1, 0, 0))
-			font[glyph].width = advance_width
+		font[glyph].width = advance_width
 
 # exception for width of full stop
 # font["period"].transform((1, 0, 0, 1, -advance_width, 0))
