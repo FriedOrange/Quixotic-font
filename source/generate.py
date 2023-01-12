@@ -145,9 +145,13 @@ font["segment-n"].addReference("segment-g", (1, 0, 0, 1, glyph_width // 2 - half
 # add defined glyphs
 for glyph, segments in segment_definitions:
 	font.createChar(fontforge.unicodeFromName(glyph), glyph)
-	for x in segments:
-		font[glyph].addReference("segment-" + x, (1, 0, 0, 1, 0, 0))
-	font[glyph].width = advance_width
+	if segments and segments[0] == "=": # for glyphs that are simply copies of existing glyphs
+		font[glyph].addReference(segments[1:], (1, 0, 0, 1, 0, 0))
+		font[glyph].useRefsMetrics(segments[1:])
+	else: # for glyphs built up from segments
+		for x in segments:
+			font[glyph].addReference("segment-" + x, (1, 0, 0, 1, 0, 0))
+			font[glyph].width = advance_width
 
 # exception for width of full stop
 # font["period"].transform((1, 0, 0, 1, -advance_width, 0))
