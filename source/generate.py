@@ -85,7 +85,7 @@ pen = None
 font.createChar(-1, "segment-g")
 pen = font["segment-g"].glyphPen()
 if SEGMENT_COUNT == 7:
-	pass
+	font["segment-g"].addReference("segment-d", (1, 0, 0, 1, 0, vertical_midpoint - half_thickness))
 else:
 	pen.moveTo(side_bearing + half_thickness + corner_gap, vertical_midpoint)
 	pen.lineTo(side_bearing + SEGMENT_THICKNESS + corner_gap, vertical_midpoint + half_thickness)
@@ -93,8 +93,8 @@ else:
 	pen.lineTo(horizontal_midpoint - corner_gap, vertical_midpoint)
 	pen.lineTo(horizontal_midpoint - half_thickness - corner_gap, vertical_midpoint - half_thickness)
 	pen.lineTo(side_bearing + SEGMENT_THICKNESS + corner_gap, vertical_midpoint - half_thickness)
-pen.closePath()
-pen = None
+	pen.closePath()
+	pen = None
 
 font.createChar(-1, "segment-l")
 pen = font["segment-l"].glyphPen()
