@@ -8,11 +8,12 @@ CAP_HEIGHT = 800
 # ASPECT_RATIO = -(1 - math.sqrt(5)) / 2
 ASPECT_RATIO = 0.5
 SEGMENT_THICKNESS = int(sys.argv[1]) # 56 good for 14 segment
-SEGMENT_GAP = 16
+SEGMENT_GAP = 20
 CHARACTER_GAP = 200
+SEGMENT_COUNT = int(sys.argv[2])
 
 # read segment definitions (CSV)
-with open(sys.argv[2]) as csv_file:
+with open(sys.argv[3]) as csv_file:
 	segment_definitions = []
 	for line in csv_file:
 		segment_definitions.append(line.strip().split(","))
@@ -59,9 +60,13 @@ font.createChar(-1, "segment-d")
 pen = font["segment-d"].glyphPen()
 pen.moveTo(side_bearing + half_thickness + corner_gap, half_thickness)
 pen.lineTo(side_bearing + SEGMENT_THICKNESS + corner_gap, SEGMENT_THICKNESS)
-pen.lineTo(advance_width - (side_bearing + SEGMENT_THICKNESS + corner_gap), SEGMENT_THICKNESS)
-pen.lineTo(advance_width - (side_bearing + half_thickness + corner_gap), half_thickness)
-pen.lineTo(advance_width - (side_bearing + SEGMENT_THICKNESS + corner_gap), 0)
+if SEGMENT_COUNT == 16:
+	pen.lineTo(horizontal_midpoint - SEGMENT_GAP // 2, SEGMENT_THICKNESS)
+	pen.lineTo(horizontal_midpoint - SEGMENT_GAP // 2, 0)
+else:
+	pen.lineTo(advance_width - (side_bearing + SEGMENT_THICKNESS + corner_gap), SEGMENT_THICKNESS)
+	pen.lineTo(advance_width - (side_bearing + half_thickness + corner_gap), half_thickness)
+	pen.lineTo(advance_width - (side_bearing + SEGMENT_THICKNESS + corner_gap), 0)
 pen.lineTo(side_bearing + SEGMENT_THICKNESS + corner_gap, 0)
 pen.closePath()
 pen = None
@@ -79,12 +84,15 @@ pen = None
 
 font.createChar(-1, "segment-g")
 pen = font["segment-g"].glyphPen()
-pen.moveTo(side_bearing + half_thickness + corner_gap, vertical_midpoint)
-pen.lineTo(side_bearing + SEGMENT_THICKNESS + corner_gap, vertical_midpoint + half_thickness)
-pen.lineTo(horizontal_midpoint - half_thickness - corner_gap, vertical_midpoint + half_thickness)
-pen.lineTo(horizontal_midpoint - corner_gap, vertical_midpoint)
-pen.lineTo(horizontal_midpoint - half_thickness - corner_gap, vertical_midpoint - half_thickness)
-pen.lineTo(side_bearing + SEGMENT_THICKNESS + corner_gap, vertical_midpoint - half_thickness)
+if SEGMENT_COUNT == 7:
+	pass
+else:
+	pen.moveTo(side_bearing + half_thickness + corner_gap, vertical_midpoint)
+	pen.lineTo(side_bearing + SEGMENT_THICKNESS + corner_gap, vertical_midpoint + half_thickness)
+	pen.lineTo(horizontal_midpoint - half_thickness - corner_gap, vertical_midpoint + half_thickness)
+	pen.lineTo(horizontal_midpoint - corner_gap, vertical_midpoint)
+	pen.lineTo(horizontal_midpoint - half_thickness - corner_gap, vertical_midpoint - half_thickness)
+	pen.lineTo(side_bearing + SEGMENT_THICKNESS + corner_gap, vertical_midpoint - half_thickness)
 pen.closePath()
 pen = None
 
@@ -113,7 +121,7 @@ font["segment-k"].transform((1, 0, 0, 1, side_bearing + SEGMENT_THICKNESS + SEGM
 font.createChar(-1, "segment-r")
 circle = fontforge.unitShape(0) # creates a unit circle
 circle.draw(font["segment-r"].glyphPen()) # draws the circle into the glyph, replacing previous outlines
-font["segment-r"].transform((SEGMENT_THICKNESS * 0.75, 0.0, 0.0, SEGMENT_THICKNESS * 0.75, advance_width, SEGMENT_THICKNESS * 0.625))
+font["segment-r"].transform((SEGMENT_THICKNESS * 0.75, 0.0, 0.0, SEGMENT_THICKNESS * 0.75, advance_width, SEGMENT_THICKNESS * 0.375))
 font["segment-r"].round()
 
 # add other segments with references
@@ -141,6 +149,10 @@ font["segment-m"].addReference("segment-h", (-1, 0, 0, -1, advance_width, CAP_HE
 font["segment-m"].unlinkRef()
 font.createChar(-1, "segment-n")
 font["segment-n"].addReference("segment-g", (1, 0, 0, 1, glyph_width // 2 - half_thickness, 0))
+font.createChar(-1, "segment-o")
+font["segment-o"].addReference("segment-d", (-1, 0, 0, -1, advance_width, CAP_HEIGHT))
+font.createChar(-1, "segment-p")
+font["segment-p"].addReference("segment-a", (-1, 0, 0, -1, advance_width, CAP_HEIGHT))
 
 # add defined glyphs
 for glyph, segments in segment_definitions:
