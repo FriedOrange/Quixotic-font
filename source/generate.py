@@ -143,7 +143,10 @@ font["segment-r"].round()
 
 # add other segments with references
 font.createChar(-1, "segment-a")
-font["segment-a"].addReference("segment-d", (-1, 0, 0, -1, advance_width, CAP_HEIGHT))
+if SEGMENT_COUNT == 7:
+	font["segment-a"].addReference("segment-d", (-1, 0, 0, -1, advance_width, CAP_HEIGHT))
+else:
+	font["segment-a"].addReference("segment-d", (1, 0, 0, 1, 0, CAP_HEIGHT - SEGMENT_THICKNESS))
 font.createChar(-1, "segment-c")
 font["segment-c"].addReference("segment-e", (-1, 0, 0, 1, CHARACTER_GAP + glyph_width, 0))
 font["segment-c"].unlinkRef()
