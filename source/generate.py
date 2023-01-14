@@ -179,15 +179,18 @@ font.createChar(-1, "segment-p")
 font["segment-p"].addReference("segment-a", (-1, 0, 0, -1, advance_width, CAP_HEIGHT))
 
 # add defined glyphs
+memo = {}
 for glyph, segments in segment_definitions:
 	font.createChar(fontforge.unicodeFromName(glyph), glyph)
-	if segments and segments[0] == "=": # for glyphs that are simply copies of existing glyphs
-		font[glyph].addReference(segments[1:], (1, 0, 0, 1, 0, 0))
-		font[glyph].useRefsMetrics(segments[1:])
-	else: # for glyphs built up from segments
-		for x in segments:
-			font[glyph].addReference("segment-" + x, (1, 0, 0, 1, 0, 0))
+	segments = "".join(sorted(segments))
+	if segments in memo:
+		font[glyph].addReference(memo[segments], (1, 0, 0, 1, 0, 0))
+		font[glyph].useRefsMetrics(memo[segments])
+	else:
+		for segment in segments:
+			font[glyph].addReference("segment-" + segment, (1, 0, 0, 1, 0, 0))
 		font[glyph].width = advance_width
+		memo[segments] = glyph
 
 # exception seven segment style
 if SEGMENT_COUNT == 7:
