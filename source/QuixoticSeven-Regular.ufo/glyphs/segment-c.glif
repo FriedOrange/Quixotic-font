@@ -3,8 +3,8 @@
   <outline>
     <contour>
       <point x="462.0" y="52.0" type="line" smooth="yes"/>
-      <point x="406.0" y="108.0" type="line" smooth="yes"/>
-      <point x="406.0" y="330.0" type="line" smooth="yes"/>
+      <point x="424.0" y="90.0" type="line" smooth="yes"/>
+      <point x="424.0" y="348.0" type="line" smooth="yes"/>
       <point x="462.0" y="386.0" type="line" smooth="yes"/>
       <point x="500.0" y="348.0" type="line" smooth="yes"/>
       <point x="500.0" y="90.0" type="line" smooth="yes"/>

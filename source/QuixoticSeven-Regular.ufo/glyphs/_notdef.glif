@@ -3,10 +3,10 @@
   <advance width="600"/>
   <outline>
     <contour>
-      <point x="194.0" y="94.0" type="line" smooth="yes"/>
-      <point x="406.0" y="94.0" type="line" smooth="yes"/>
-      <point x="406.0" y="706.0" type="line" smooth="yes"/>
-      <point x="194.0" y="706.0" type="line" smooth="yes"/>
+      <point x="176.0" y="76.0" type="line" smooth="yes"/>
+      <point x="424.0" y="76.0" type="line" smooth="yes"/>
+      <point x="424.0" y="724.0" type="line" smooth="yes"/>
+      <point x="176.0" y="724.0" type="line" smooth="yes"/>
     </contour>
     <contour>
       <point x="100.0" y="0.0" type="line" smooth="yes"/>
