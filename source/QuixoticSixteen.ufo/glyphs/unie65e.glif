@@ -3,10 +3,10 @@
   <advance width="600"/>
   <unicode hex="E65E"/>
   <outline>
-    <component base="segment-d"/>
-    <component base="segment-g"/>
-    <component base="segment-i"/>
-    <component base="segment-k"/>
-    <component base="segment-p"/>
+    <component base="segment_d"/>
+    <component base="segment_g"/>
+    <component base="segment_i"/>
+    <component base="segment_k"/>
+    <component base="segment_p"/>
   </outline>
 </glyph>

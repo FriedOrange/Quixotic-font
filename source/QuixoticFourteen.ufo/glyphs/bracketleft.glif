@@ -3,9 +3,9 @@
   <advance width="600"/>
   <unicode hex="005B"/>
   <outline>
-    <component base="segment-a"/>
-    <component base="segment-d"/>
-    <component base="segment-h"/>
-    <component base="segment-k"/>
+    <component base="segment_a"/>
+    <component base="segment_d"/>
+    <component base="segment_h"/>
+    <component base="segment_k"/>
   </outline>
 </glyph>

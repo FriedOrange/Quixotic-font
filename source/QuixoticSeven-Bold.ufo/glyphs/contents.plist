@@ -206,40 +206,40 @@
     <string>second.glif</string>
     <key>section</key>
     <string>section.glif</string>
-    <key>segment-a</key>
-    <string>segment-a.glif</string>
-    <key>segment-b</key>
-    <string>segment-b.glif</string>
-    <key>segment-c</key>
-    <string>segment-c.glif</string>
-    <key>segment-d</key>
-    <string>segment-d.glif</string>
-    <key>segment-e</key>
-    <string>segment-e.glif</string>
-    <key>segment-f</key>
-    <string>segment-f.glif</string>
-    <key>segment-g</key>
-    <string>segment-g.glif</string>
-    <key>segment-h</key>
-    <string>segment-h.glif</string>
-    <key>segment-i</key>
-    <string>segment-i.glif</string>
-    <key>segment-j</key>
-    <string>segment-j.glif</string>
-    <key>segment-k</key>
-    <string>segment-k.glif</string>
-    <key>segment-l</key>
-    <string>segment-l.glif</string>
-    <key>segment-m</key>
-    <string>segment-m.glif</string>
-    <key>segment-n</key>
-    <string>segment-n.glif</string>
-    <key>segment-o</key>
-    <string>segment-o.glif</string>
-    <key>segment-p</key>
-    <string>segment-p.glif</string>
-    <key>segment-r</key>
-    <string>segment-r.glif</string>
+    <key>segment_a</key>
+    <string>segment_a.glif</string>
+    <key>segment_b</key>
+    <string>segment_b.glif</string>
+    <key>segment_c</key>
+    <string>segment_c.glif</string>
+    <key>segment_d</key>
+    <string>segment_d.glif</string>
+    <key>segment_e</key>
+    <string>segment_e.glif</string>
+    <key>segment_f</key>
+    <string>segment_f.glif</string>
+    <key>segment_g</key>
+    <string>segment_g.glif</string>
+    <key>segment_h</key>
+    <string>segment_h.glif</string>
+    <key>segment_i</key>
+    <string>segment_i.glif</string>
+    <key>segment_j</key>
+    <string>segment_j.glif</string>
+    <key>segment_k</key>
+    <string>segment_k.glif</string>
+    <key>segment_l</key>
+    <string>segment_l.glif</string>
+    <key>segment_m</key>
+    <string>segment_m.glif</string>
+    <key>segment_n</key>
+    <string>segment_n.glif</string>
+    <key>segment_o</key>
+    <string>segment_o.glif</string>
+    <key>segment_p</key>
+    <string>segment_p.glif</string>
+    <key>segment_r</key>
+    <string>segment_r.glif</string>
     <key>semicolon</key>
     <string>semicolon.glif</string>
     <key>seven</key>

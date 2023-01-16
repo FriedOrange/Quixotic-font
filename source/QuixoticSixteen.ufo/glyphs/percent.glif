@@ -3,15 +3,15 @@
   <advance width="600"/>
   <unicode hex="0025"/>
   <outline>
-    <component base="segment-a"/>
-    <component base="segment-c"/>
-    <component base="segment-f"/>
-    <component base="segment-g"/>
-    <component base="segment-i"/>
-    <component base="segment-j"/>
-    <component base="segment-k"/>
-    <component base="segment-l"/>
-    <component base="segment-n"/>
-    <component base="segment-p"/>
+    <component base="segment_a"/>
+    <component base="segment_c"/>
+    <component base="segment_f"/>
+    <component base="segment_g"/>
+    <component base="segment_i"/>
+    <component base="segment_j"/>
+    <component base="segment_k"/>
+    <component base="segment_l"/>
+    <component base="segment_n"/>
+    <component base="segment_p"/>
   </outline>
 </glyph>

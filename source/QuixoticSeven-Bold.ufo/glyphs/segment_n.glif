@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="segment_n" format="2">
+  <outline>
+    <component base="segment_g" xOffset="135.0"/>
+  </outline>
+</glyph>

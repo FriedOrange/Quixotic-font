@@ -3,6 +3,6 @@
   <advance width="600"/>
   <unicode hex="005F"/>
   <outline>
-    <component base="segment-d"/>
+    <component base="segment_d"/>
   </outline>
 </glyph>

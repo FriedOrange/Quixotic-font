@@ -3,7 +3,7 @@
   <advance width="200"/>
   <unicode hex="003A"/>
   <outline>
-    <component base="segment-r" xOffset="-500.0" yOffset="240.0"/>
-    <component base="segment-r" xOffset="-500.0" yOffset="560.0"/>
+    <component base="segment_r" xOffset="-500.0" yOffset="240.0"/>
+    <component base="segment_r" xOffset="-500.0" yOffset="560.0"/>
   </outline>
 </glyph>

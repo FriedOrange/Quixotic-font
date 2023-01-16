@@ -57,8 +57,8 @@ pen = None
 font[".notdef"].width = advance_width
 
 # draw unique segments
-font.createChar(-1, "segment-d")
-pen = font["segment-d"].glyphPen()
+font.createChar(-1, "segment_d")
+pen = font["segment_d"].glyphPen()
 pen.moveTo(side_bearing + min(half_thickness, MAX_CORNER_SIZE) + corner_gap, min(half_thickness, MAX_CORNER_SIZE))
 pen.lineTo(side_bearing + SEGMENT_THICKNESS + corner_gap, SEGMENT_THICKNESS)
 if SEGMENT_COUNT == 16:
@@ -72,8 +72,8 @@ pen.lineTo(side_bearing + min(SEGMENT_THICKNESS, MAX_CORNER_SIZE * 2) + corner_g
 pen.closePath()
 pen = None
 
-# font.createChar(-1, "segment-e")
-# pen = font["segment-e"].glyphPen()
+# font.createChar(-1, "segment_e")
+# pen = font["segment_e"].glyphPen()
 # pen.moveTo(side_bearing + half_thickness, half_thickness + corner_gap)
 # pen.lineTo(side_bearing, SEGMENT_THICKNESS + corner_gap)
 # pen.lineTo(side_bearing, vertical_midpoint - half_thickness - corner_gap)
@@ -83,8 +83,8 @@ pen = None
 # pen.closePath()
 # pen = None
 
-font.createChar(-1, "segment-e")
-pen = font["segment-e"].glyphPen()
+font.createChar(-1, "segment_e")
+pen = font["segment_e"].glyphPen()
 pen.moveTo(side_bearing + min(half_thickness, MAX_CORNER_SIZE), min(half_thickness, MAX_CORNER_SIZE) + corner_gap)
 pen.lineTo(side_bearing, min(SEGMENT_THICKNESS, 2 * MAX_CORNER_SIZE) + corner_gap)
 pen.lineTo(side_bearing, vertical_midpoint - min(half_thickness, MAX_CORNER_SIZE) - corner_gap)
@@ -94,8 +94,8 @@ pen.lineTo(side_bearing + SEGMENT_THICKNESS, SEGMENT_THICKNESS + corner_gap)
 pen.closePath()
 pen = None
 
-font.createChar(-1, "segment-g")
-pen = font["segment-g"].glyphPen()
+font.createChar(-1, "segment_g")
+pen = font["segment_g"].glyphPen()
 if SEGMENT_COUNT == 7:
 	pen.moveTo(side_bearing + min(half_thickness, MAX_CORNER_SIZE) + corner_gap, vertical_midpoint)
 	pen.lineTo(side_bearing + half_thickness + min(half_thickness, MAX_CORNER_SIZE) + corner_gap, vertical_midpoint + half_thickness)
@@ -113,8 +113,8 @@ else:
 pen.closePath()
 pen = None
 
-font.createChar(-1, "segment-l")
-pen = font["segment-l"].glyphPen()
+font.createChar(-1, "segment_l")
+pen = font["segment_l"].glyphPen()
 pen.moveTo(horizontal_midpoint - half_thickness, SEGMENT_THICKNESS + SEGMENT_GAP)
 pen.lineTo(horizontal_midpoint - half_thickness, vertical_midpoint - half_thickness - corner_gap)
 pen.lineTo(horizontal_midpoint, vertical_midpoint - corner_gap)
@@ -123,8 +123,8 @@ pen.lineTo(horizontal_midpoint + half_thickness, SEGMENT_THICKNESS + SEGMENT_GAP
 pen.closePath()
 pen = None
 
-font.createChar(-1, "segment-k")
-pen = font["segment-k"].glyphPen()
+font.createChar(-1, "segment_k")
+pen = font["segment_k"].glyphPen()
 pen.moveTo(0, 0)
 pen.lineTo(0, diagonal_y_offset)
 pen.lineTo(quadrant_w - diagonal_x_offset, quadrant_h)
@@ -133,50 +133,50 @@ pen.lineTo(quadrant_w, quadrant_h - diagonal_y_offset)
 pen.lineTo(diagonal_x_offset, 0)
 pen.closePath()
 pen = None
-font["segment-k"].transform((1, 0, 0, 1, side_bearing + SEGMENT_THICKNESS + SEGMENT_GAP, SEGMENT_THICKNESS + SEGMENT_GAP))
+font["segment_k"].transform((1, 0, 0, 1, side_bearing + SEGMENT_THICKNESS + SEGMENT_GAP, SEGMENT_THICKNESS + SEGMENT_GAP))
 
-font.createChar(-1, "segment-r")
+font.createChar(-1, "segment_r")
 circle = fontforge.unitShape(0) # creates a unit circle
-circle.draw(font["segment-r"].glyphPen()) # draws the circle into the glyph, replacing previous outlines
-font["segment-r"].transform((min(half_thickness * 1.25, 70), 0.0, 0.0, min(half_thickness * 1.25, 70), advance_width, 0))
-font["segment-r"].round()
+circle.draw(font["segment_r"].glyphPen()) # draws the circle into the glyph, replacing previous outlines
+font["segment_r"].transform((min(half_thickness * 1.25, 70), 0.0, 0.0, min(half_thickness * 1.25, 70), advance_width, 0))
+font["segment_r"].round()
 
 # add other segments with references
-font.createChar(-1, "segment-a")
+font.createChar(-1, "segment_a")
 if SEGMENT_COUNT == 7:
-	font["segment-a"].addReference("segment-d", (-1, 0, 0, -1, advance_width, CAP_HEIGHT))
+	font["segment_a"].addReference("segment_d", (-1, 0, 0, -1, advance_width, CAP_HEIGHT))
 else:
-	font["segment-a"].addReference("segment-d", (1, 0, 0, 1, 0, CAP_HEIGHT - SEGMENT_THICKNESS))
-font.createChar(-1, "segment-c")
-font["segment-c"].addReference("segment-e", (-1, 0, 0, 1, CHARACTER_GAP + glyph_width, 0))
-font["segment-c"].unlinkRef()
-font["segment-c"].correctDirection()
-font.createChar(-1, "segment-b")
-font["segment-b"].addReference("segment-c", (1, 0, 0, 1, 0, vertical_midpoint - min(half_thickness, MAX_CORNER_SIZE)))
-font["segment-b"].unlinkRef()
-font.createChar(-1, "segment-f")
-font["segment-f"].addReference("segment-e", (1, 0, 0, 1, 0, vertical_midpoint - min(half_thickness, MAX_CORNER_SIZE)))
-font["segment-f"].unlinkRef()
-font.createChar(-1, "segment-h")
-font["segment-h"].addReference("segment-k", (1, 0, 0, -1, 0, CAP_HEIGHT))
-font["segment-h"].unlinkRef()
-font["segment-h"].correctDirection()
-font.createChar(-1, "segment-i")
-font["segment-i"].addReference("segment-l", (1, 0, 0, -1, 0, CAP_HEIGHT))
-font["segment-i"].unlinkRef()
-font["segment-i"].correctDirection()
-font.createChar(-1, "segment-j")
-font["segment-j"].addReference("segment-k", (-1, 0, 0, -1, advance_width, CAP_HEIGHT))
-font["segment-j"].unlinkRef()
-font.createChar(-1, "segment-m")
-font["segment-m"].addReference("segment-h", (-1, 0, 0, -1, advance_width, CAP_HEIGHT))
-font["segment-m"].unlinkRef()
-font.createChar(-1, "segment-n")
-font["segment-n"].addReference("segment-g", (1, 0, 0, 1, glyph_width // 2 - half_thickness, 0))
-font.createChar(-1, "segment-o")
-font["segment-o"].addReference("segment-d", (-1, 0, 0, -1, advance_width, CAP_HEIGHT))
-font.createChar(-1, "segment-p")
-font["segment-p"].addReference("segment-a", (-1, 0, 0, -1, advance_width, CAP_HEIGHT))
+	font["segment_a"].addReference("segment_d", (1, 0, 0, 1, 0, CAP_HEIGHT - SEGMENT_THICKNESS))
+font.createChar(-1, "segment_c")
+font["segment_c"].addReference("segment_e", (-1, 0, 0, 1, CHARACTER_GAP + glyph_width, 0))
+font["segment_c"].unlinkRef()
+font["segment_c"].correctDirection()
+font.createChar(-1, "segment_b")
+font["segment_b"].addReference("segment_c", (1, 0, 0, 1, 0, vertical_midpoint - min(half_thickness, MAX_CORNER_SIZE)))
+font["segment_b"].unlinkRef()
+font.createChar(-1, "segment_f")
+font["segment_f"].addReference("segment_e", (1, 0, 0, 1, 0, vertical_midpoint - min(half_thickness, MAX_CORNER_SIZE)))
+font["segment_f"].unlinkRef()
+font.createChar(-1, "segment_h")
+font["segment_h"].addReference("segment_k", (1, 0, 0, -1, 0, CAP_HEIGHT))
+font["segment_h"].unlinkRef()
+font["segment_h"].correctDirection()
+font.createChar(-1, "segment_i")
+font["segment_i"].addReference("segment_l", (1, 0, 0, -1, 0, CAP_HEIGHT))
+font["segment_i"].unlinkRef()
+font["segment_i"].correctDirection()
+font.createChar(-1, "segment_j")
+font["segment_j"].addReference("segment_k", (-1, 0, 0, -1, advance_width, CAP_HEIGHT))
+font["segment_j"].unlinkRef()
+font.createChar(-1, "segment_m")
+font["segment_m"].addReference("segment_h", (-1, 0, 0, -1, advance_width, CAP_HEIGHT))
+font["segment_m"].unlinkRef()
+font.createChar(-1, "segment_n")
+font["segment_n"].addReference("segment_g", (1, 0, 0, 1, glyph_width // 2 - half_thickness, 0))
+font.createChar(-1, "segment_o")
+font["segment_o"].addReference("segment_d", (-1, 0, 0, -1, advance_width, CAP_HEIGHT))
+font.createChar(-1, "segment_p")
+font["segment_p"].addReference("segment_a", (-1, 0, 0, -1, advance_width, CAP_HEIGHT))
 
 # add defined glyphs
 memo = {}
@@ -188,7 +188,7 @@ for glyph, segments in segment_definitions:
 		font[glyph].useRefsMetrics(memo[segments])
 	else:
 		for segment in segments:
-			font[glyph].addReference("segment-" + segment, (1, 0, 0, 1, 0, 0))
+			font[glyph].addReference("segment_" + segment, (1, 0, 0, 1, 0, 0))
 		font[glyph].width = advance_width
 		memo[segments] = glyph
 
@@ -196,8 +196,8 @@ for glyph, segments in segment_definitions:
 if SEGMENT_COUNT == 7:
 	font["period"].transform((1, 0, 0, 1, -advance_width, 0))
 	font["colon"].clear()
-	font["colon"].addReference("segment-r", (1, 0, 0, 1, horizontal_midpoint // 3 - advance_width, 3 * CAP_HEIGHT // 10))
-	font["colon"].addReference("segment-r", (1, 0, 0, 1, horizontal_midpoint // 3 - advance_width, 7 * CAP_HEIGHT // 10))
+	font["colon"].addReference("segment_r", (1, 0, 0, 1, horizontal_midpoint // 3 - advance_width, 3 * CAP_HEIGHT // 10))
+	font["colon"].addReference("segment_r", (1, 0, 0, 1, horizontal_midpoint // 3 - advance_width, 7 * CAP_HEIGHT // 10))
 	font["colon"].width = advance_width // 3
 
 # finished

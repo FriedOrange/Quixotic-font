@@ -2,6 +2,6 @@
 <glyph name="period" format="2">
   <unicode hex="002E"/>
   <outline>
-    <component base="segment-r" xOffset="-600.0"/>
+    <component base="segment_r" xOffset="-600.0"/>
   </outline>
 </glyph>

@@ -3,8 +3,8 @@
   <advance width="600"/>
   <unicode hex="0037"/>
   <outline>
-    <component base="segment-a"/>
-    <component base="segment-b"/>
-    <component base="segment-c"/>
+    <component base="segment_a"/>
+    <component base="segment_b"/>
+    <component base="segment_c"/>
   </outline>
 </glyph>
