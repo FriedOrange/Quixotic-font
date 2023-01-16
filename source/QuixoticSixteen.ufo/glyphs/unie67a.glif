@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="unie67a" format="2">
+  <advance width="600"/>
+  <unicode hex="E67A"/>
+  <outline>
+    <component base="segment-a"/>
+    <component base="segment-e"/>
+    <component base="segment-f"/>
+    <component base="segment-o"/>
+  </outline>
+</glyph>

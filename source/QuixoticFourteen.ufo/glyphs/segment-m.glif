@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="segment-m" format="2">
+  <outline>
+    <contour>
+      <point x="424.0" y="76.0" type="line" smooth="yes"/>
+      <point x="414.0" y="76.0" type="line" smooth="yes"/>
+      <point x="348.0" y="237.0" type="line" smooth="yes"/>
+      <point x="348.0" y="352.0" type="line" smooth="yes"/>
+      <point x="358.0" y="352.0" type="line" smooth="yes"/>
+      <point x="424.0" y="191.0" type="line" smooth="yes"/>
+    </contour>
+  </outline>
+</glyph>

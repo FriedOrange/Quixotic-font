@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="unie673" format="2">
+  <advance width="600"/>
+  <unicode hex="E673"/>
+  <outline>
+    <component base="segment-d"/>
+    <component base="segment-e"/>
+    <component base="segment-f"/>
+    <component base="segment-g"/>
+    <component base="segment-l"/>
+  </outline>
+</glyph>

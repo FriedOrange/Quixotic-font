@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="D" format="2">
+  <advance width="600"/>
+  <unicode hex="0044"/>
+  <outline>
+    <component base="segment-a"/>
+    <component base="segment-b"/>
+    <component base="segment-c"/>
+    <component base="segment-d"/>
+    <component base="segment-i"/>
+    <component base="segment-l"/>
+    <component base="segment-o"/>
+    <component base="segment-p"/>
+  </outline>
+</glyph>

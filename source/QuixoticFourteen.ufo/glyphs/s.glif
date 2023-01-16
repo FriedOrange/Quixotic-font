@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="s" format="2">
+  <advance width="600"/>
+  <unicode hex="0073"/>
+  <outline>
+    <component base="segment-d"/>
+    <component base="segment-m"/>
+    <component base="segment-n"/>
+  </outline>
+</glyph>

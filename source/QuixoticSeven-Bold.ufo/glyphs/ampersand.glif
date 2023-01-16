@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ampersand" format="2">
+  <advance width="600"/>
+  <unicode hex="0026"/>
+  <outline>
+    <component base="segment-b"/>
+    <component base="segment-c"/>
+    <component base="segment-g"/>
+  </outline>
+</glyph>

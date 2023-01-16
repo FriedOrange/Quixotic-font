@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>ascender</key>
+    <integer>800</integer>
+    <key>copyright</key>
+    <string>Copyright (c) 2023, neilb</string>
+    <key>descender</key>
+    <integer>-200</integer>
+    <key>familyName</key>
+    <string>Untitled1</string>
+    <key>italicAngle</key>
+    <real>0.0</real>
+    <key>note</key>
+    <string>2023-1-16: Created with FontForge (http://fontforge.org)</string>
+    <key>openTypeHeadCreated</key>
+    <string>2023/01/16 07:17:43</string>
+    <key>openTypeHheaAscender</key>
+    <integer>800</integer>
+    <key>openTypeHheaDescender</key>
+    <integer>-35</integer>
+    <key>openTypeOS2Selection</key>
+    <array>
+      <integer>7</integer>
+    </array>
+    <key>openTypeOS2TypoAscender</key>
+    <integer>800</integer>
+    <key>openTypeOS2TypoDescender</key>
+    <integer>-200</integer>
+    <key>openTypeOS2TypoLineGap</key>
+    <integer>0</integer>
+    <key>openTypeOS2VendorID</key>
+    <string>PfEd</string>
+    <key>openTypeOS2WinAscent</key>
+    <integer>800</integer>
+    <key>openTypeOS2WinDescent</key>
+    <integer>35</integer>
+    <key>postscriptFontName</key>
+    <string>Untitled1</string>
+    <key>postscriptFullName</key>
+    <string>Untitled1</string>
+    <key>postscriptSlantAngle</key>
+    <real>0.0</real>
+    <key>postscriptUnderlinePosition</key>
+    <real>-75.0</real>
+    <key>postscriptUnderlineThickness</key>
+    <real>50.0</real>
+    <key>postscriptWeightName</key>
+    <string>Regular</string>
+    <key>styleName</key>
+    <string>Regular</string>
+    <key>unitsPerEm</key>
+    <integer>1000</integer>
+    <key>versionMajor</key>
+    <integer>1</integer>
+    <key>versionMinor</key>
+    <integer>0</integer>
+  </dict>
+</plist>
