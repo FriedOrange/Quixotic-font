@@ -201,4 +201,4 @@ if SEGMENT_COUNT == 7:
 	font["colon"].width = advance_width // 3
 
 # finished
-font.save("source\\temp\\temp.sfd")
+font.save("source\\temp.sfd")
