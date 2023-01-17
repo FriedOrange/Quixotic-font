@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<designspace format="5.0">
+    <axes>
+        <axis name="Weight" tag="wght" minimum="300" maximum="700" default="400" />
+		<!-- <axis name="Slant" tag="slnt" minimum="0" maximum="9" default="0" /> -->
+    </axes>
+    <sources>
+        <source familyname="Quixotic Seven" stylename="Light" filename="QuixoticSeven-Light.ufo" name="7light.ufo">
+			<location>
+				<dimension name="Weight" uservalue="300" xvalue="300" />
+			</location>
+		</source>
+		<source familyname="Quixotic Seven" stylename="Regular" filename="QuixoticSeven-Regular.ufo" name="7reg.ufo">
+			<location>
+				<dimension name="Weight" uservalue="400" xvalue="400" />
+			</location>
+		</source>
+		<source familyname="Quixotic Seven" stylename="Bold" filename="QuixoticSeven-Bold.ufo" name="7bold.ufo">
+			<location>
+				<dimension name="Weight" uservalue="700" xvalue="700" />
+			</location>
+		</source>
+    </sources>
+    <instances>
+        <instance familyname="Quixotic Seven" stylename="Light" name="7light.ttf" filename="temp\QuixoticSeven-Light.ufo" postscriptfontname="QuixoticSeven-Light" stylemapfamilyname="Quixotic Seven" stylemapstylename="Light">
+			<location>
+				<dimension name="Weight" uservalue="300" xvalue="300" />
+			</location>
+		</instance>
+        <instance familyname="Quixotic Seven" stylename="Regular" name="7reg.ttf" filename="temp\QuixoticSeven-Regular.ufo" postscriptfontname="QuixoticSeven-Regular" stylemapfamilyname="Quixotic Seven" stylemapstylename="Regular">
+			<location>
+				<dimension name="Weight" uservalue="400" xvalue="400" />
+			</location>
+		</instance>
+        <instance familyname="Quixotic Seven" stylename="Medium" name="7med.ttf" filename="temp\QuixoticSeven-Medium.ufo" postscriptfontname="QuixoticSeven-Medium" stylemapfamilyname="Quixotic Seven" stylemapstylename="Medium">
+			<location>
+				<dimension name="Weight" uservalue="500" xvalue="500" />
+			</location>
+		</instance>
+        <instance familyname="Quixotic Seven" stylename="Semibold" name="7semib.ttf" filename="temp\QuixoticSeven-Semibold.ufo" postscriptfontname="QuixoticSeven-Semibold" stylemapfamilyname="Quixotic Seven" stylemapstylename="Semibold">
+			<location>
+				<dimension name="Weight" uservalue="600" xvalue="600" />
+			</location>
+		</instance>
+        <instance familyname="Quixotic Seven" stylename="Bold" name="7bold.ttf" filename="temp\QuixoticSeven-Bold.ufo" postscriptfontname="QuixoticSeven-Bold" stylemapfamilyname="Quixotic Seven" stylemapstylename="Bold">
+			<location>
+				<dimension name="Weight" uservalue="700" xvalue="700" />
+			</location>
+		</instance>
+    </instances>
+</designspace>
