@@ -15,11 +15,15 @@
     <key>note</key>
     <string>2023-1-18: Created with FontForge (http://fontforge.org)</string>
     <key>openTypeHeadCreated</key>
-    <string>2023/01/17 13:04:00</string>
+    <string>2023/01/17 13:12:43</string>
     <key>openTypeHheaAscender</key>
     <integer>800</integer>
     <key>openTypeHheaDescender</key>
     <integer>-70</integer>
+    <key>openTypeNamePreferredFamilyName</key>
+    <string>Quixotic Seven</string>
+    <key>openTypeNamePreferredSubfamilyName</key>
+    <string>Semibold</string>
     <key>openTypeOS2Selection</key>
     <array>
       <integer>7</integer>

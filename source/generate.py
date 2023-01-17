@@ -220,6 +220,10 @@ if SEGMENT_COUNT == 7:
 font.fontname = "Quixotic" + FONTNAME_MAP[SEGMENT_COUNT] + "-" + (FONTNAME_MAP[SEGMENT_THICKNESS] if SEGMENT_COUNT == 7 else "Regular")
 font.familyname = "Quixotic " + FONTNAME_MAP[SEGMENT_COUNT] + (FAMILYNAME_MAP[SEGMENT_THICKNESS] if SEGMENT_COUNT == 7 else "")
 font.fullname = font.familyname + (" Bold" if SEGMENT_THICKNESS == 130 else "")
+if SEGMENT_COUNT == 7 and SEGMENT_THICKNESS != 76 and SEGMENT_THICKNESS != 130:
+	font.appendSFNTName("English (US)", 16, "Quixotic " + FONTNAME_MAP[SEGMENT_COUNT])
+	font.appendSFNTName("English (US)", 17, FONTNAME_MAP[SEGMENT_THICKNESS])
+
 
 # finished
 font.save("source\\temp\\temp.sfd")
