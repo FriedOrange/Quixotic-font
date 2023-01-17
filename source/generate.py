@@ -12,6 +12,23 @@ SEGMENT_GAP = 20
 ADVANCE_WIDTH = 633
 SEGMENT_COUNT = int(sys.argv[2])
 MAX_CORNER_SIZE = 38
+FONTNAME_MAP = {
+	7: "Seven",
+	14: "Fourteen",
+	16: "Sixteen",
+	56: "Light",
+	76: "Regular",
+	94: "Medium",
+	112: "Semibold",
+	130: "Bold"
+}
+FAMILYNAME_MAP = {
+	56: " Light",
+	76: "",
+	94: " Medium",
+	112: " Semibold",
+	130: ""
+}
 
 # read segment definitions (CSV)
 with open(sys.argv[3]) as csv_file:
@@ -199,6 +216,10 @@ if SEGMENT_COUNT == 7:
 	font["colon"].addReference("segment_r", (1, 0, 0, 1, horizontal_midpoint // 3 - ADVANCE_WIDTH, 3 * CAP_HEIGHT // 10))
 	font["colon"].addReference("segment_r", (1, 0, 0, 1, horizontal_midpoint // 3 - ADVANCE_WIDTH, 7 * CAP_HEIGHT // 10))
 	font["colon"].width = ADVANCE_WIDTH // 3
+
+font.fontname = "Quixotic" + FONTNAME_MAP[SEGMENT_COUNT] + "-" + (FONTNAME_MAP[SEGMENT_THICKNESS] if SEGMENT_COUNT == 7 else "Regular")
+font.familyname = "Quixotic " + FONTNAME_MAP[SEGMENT_COUNT] + (FAMILYNAME_MAP[SEGMENT_THICKNESS] if SEGMENT_COUNT == 7 else "")
+font.fullname = font.familyname + (" Bold" if SEGMENT_THICKNESS == 130 else "")
 
 # finished
 font.save("source\\temp\\temp.sfd")
