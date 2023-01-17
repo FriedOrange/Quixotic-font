@@ -209,7 +209,7 @@ for glyph, segments in segment_definitions:
 		font[glyph].width = ADVANCE_WIDTH
 		memo[segments] = glyph
 
-# exception seven segment style
+# exception for seven segment style
 if SEGMENT_COUNT == 7:
 	font["period"].transform((1, 0, 0, 1, -ADVANCE_WIDTH, 0))
 	font["colon"].clear()
@@ -217,13 +217,32 @@ if SEGMENT_COUNT == 7:
 	font["colon"].addReference("segment_r", (1, 0, 0, 1, horizontal_midpoint // 3 - ADVANCE_WIDTH, 7 * CAP_HEIGHT // 10))
 	font["colon"].width = ADVANCE_WIDTH // 3
 
+# add font names
 font.fontname = "Quixotic" + FONTNAME_MAP[SEGMENT_COUNT] + "-" + (FONTNAME_MAP[SEGMENT_THICKNESS] if SEGMENT_COUNT == 7 else "Regular")
 font.familyname = "Quixotic " + FONTNAME_MAP[SEGMENT_COUNT] + (FAMILYNAME_MAP[SEGMENT_THICKNESS] if SEGMENT_COUNT == 7 else "")
 font.fullname = font.familyname + (" Bold" if SEGMENT_THICKNESS == 130 else "")
+font.copyright = "Copyright 2023 Brad Neil"
 if SEGMENT_COUNT == 7 and SEGMENT_THICKNESS != 76 and SEGMENT_THICKNESS != 130:
 	font.appendSFNTName("English (US)", 16, "Quixotic " + FONTNAME_MAP[SEGMENT_COUNT])
 	font.appendSFNTName("English (US)", 17, FONTNAME_MAP[SEGMENT_THICKNESS])
 
+# set metrics
+font.os2_winascent_add = False
+font.os2_winascent = 800
+font.os2_windescent_add = False
+font.os2_windescent = 70 # value from bold weight
+font.os2_typoascent_add = False
+font.os2_typoascent = 1000
+font.os2_typodescent_add = False
+font.os2_typodescent = -200
+font.os2_typolinegap = 0
+font.hhea_ascent_add = False
+font.hhea_ascent = 1000
+font.hhea_descent_add = False
+font.hhea_descent = -200
+font.hhea_linegap = 0
+font.os2_use_typo_metrics = True
+font.os2_weight_width_slope_only = True
 
 # finished
 font.save("source\\temp\\temp.sfd")
