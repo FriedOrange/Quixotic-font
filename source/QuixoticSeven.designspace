@@ -1,7 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <designspace format="5.0">
     <axes>
-        <axis name="Weight" tag="wght" minimum="300" maximum="700" default="400" />
+        <axis name="Weight" tag="wght" minimum="300" maximum="700" default="400">
+			<labels>
+				<label name="Light" uservalue="300" />
+				<label name="Regular" uservalue="400" />
+				<label name="Medium" uservalue="500" />
+				<label name="Semibold" uservalue="600" />
+				<label name="Bold" uservalue="700" />
+			</labels>
+		</axis>
 		<!-- <axis name="Slant" tag="slnt" minimum="0" maximum="9" default="0" /> -->
     </axes>
     <sources>
