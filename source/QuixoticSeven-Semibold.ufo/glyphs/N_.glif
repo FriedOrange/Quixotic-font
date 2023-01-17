@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="N" format="2">
+  <advance width="633"/>
+  <unicode hex="004E"/>
+  <outline>
+    <component base="segment_a"/>
+    <component base="segment_b"/>
+    <component base="segment_c"/>
+    <component base="segment_e"/>
+    <component base="segment_f"/>
+  </outline>
+</glyph>

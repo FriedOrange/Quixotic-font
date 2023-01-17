@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="W" format="2">
+  <advance width="633"/>
+  <unicode hex="0057"/>
+  <outline>
+    <component base="segment_a"/>
+    <component base="segment_c"/>
+    <component base="segment_d"/>
+    <component base="segment_e"/>
+  </outline>
+</glyph>

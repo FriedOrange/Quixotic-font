@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="one" format="2">
+  <advance width="633"/>
+  <unicode hex="0031"/>
+  <outline>
+    <component base="segment_b"/>
+    <component base="segment_c"/>
+  </outline>
+</glyph>
