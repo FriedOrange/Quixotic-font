@@ -301,6 +301,8 @@ font.upos = int(SEGMENT_THICKNESS * 1.5)
 font.uwidth = SEGMENT_THICKNESS
 font.os2_strikeypos = vertical_midpoint - half_thickness
 font.os2_strikeysize = SEGMENT_THICKNESS
+if SEGMENT_COUNT == 7:
+	font.os2_panose = (2, 0, 0, 0, 0, 0, 0, 0, 0, 0) # proportion was being automatically (and wrongly) set to Monospace
 
 # finished
 font.save("source\\temp\\temp.sfd")

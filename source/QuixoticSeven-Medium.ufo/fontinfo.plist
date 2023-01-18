@@ -15,7 +15,7 @@
     <key>note</key>
     <string>2023-1-18: Created with FontForge (http://fontforge.org)</string>
     <key>openTypeHeadCreated</key>
-    <string>2023/01/18 09:28:55</string>
+    <string>2023/01/18 10:03:15</string>
     <key>openTypeHheaAscender</key>
     <integer>1000</integer>
     <key>openTypeHheaDescender</key>
@@ -38,8 +38,8 @@
     <array>
       <integer>2</integer>
       <integer>0</integer>
-      <integer>6</integer>
-      <integer>3</integer>
+      <integer>0</integer>
+      <integer>0</integer>
       <integer>0</integer>
       <integer>0</integer>
       <integer>0</integer>
