@@ -29,6 +29,13 @@ FAMILYNAME_MAP = {
 	112: " Semibold",
 	130: ""
 }
+WEIGHT_MAP = {
+	56: 300,
+	76: 400,
+	94: 500,
+	112: 600,
+	130: 700
+}
 
 # read segment definitions (CSV)
 with open(sys.argv[3]) as csv_file:
@@ -130,27 +137,28 @@ else:
 pen.closePath()
 pen = None
 
-font.createChar(-1, "segment_l")
-pen = font["segment_l"].glyphPen()
-pen.moveTo(horizontal_midpoint - half_thickness, SEGMENT_THICKNESS + SEGMENT_GAP)
-pen.lineTo(horizontal_midpoint - half_thickness, vertical_midpoint - half_thickness - corner_gap)
-pen.lineTo(horizontal_midpoint, vertical_midpoint - corner_gap)
-pen.lineTo(horizontal_midpoint + half_thickness, vertical_midpoint - half_thickness - corner_gap)
-pen.lineTo(horizontal_midpoint + half_thickness, SEGMENT_THICKNESS + SEGMENT_GAP)
-pen.closePath()
-pen = None
+if SEGMENT_COUNT > 7:
+	font.createChar(-1, "segment_l")
+	pen = font["segment_l"].glyphPen()
+	pen.moveTo(horizontal_midpoint - half_thickness, SEGMENT_THICKNESS + SEGMENT_GAP)
+	pen.lineTo(horizontal_midpoint - half_thickness, vertical_midpoint - half_thickness - corner_gap)
+	pen.lineTo(horizontal_midpoint, vertical_midpoint - corner_gap)
+	pen.lineTo(horizontal_midpoint + half_thickness, vertical_midpoint - half_thickness - corner_gap)
+	pen.lineTo(horizontal_midpoint + half_thickness, SEGMENT_THICKNESS + SEGMENT_GAP)
+	pen.closePath()
+	pen = None
 
-font.createChar(-1, "segment_k")
-pen = font["segment_k"].glyphPen()
-pen.moveTo(0, 0)
-pen.lineTo(0, diagonal_y_offset)
-pen.lineTo(quadrant_w - diagonal_x_offset, quadrant_h)
-pen.lineTo(quadrant_w, quadrant_h)
-pen.lineTo(quadrant_w, quadrant_h - diagonal_y_offset)
-pen.lineTo(diagonal_x_offset, 0)
-pen.closePath()
-pen = None
-font["segment_k"].transform((1, 0, 0, 1, side_bearing + SEGMENT_THICKNESS + SEGMENT_GAP, SEGMENT_THICKNESS + SEGMENT_GAP))
+	font.createChar(-1, "segment_k")
+	pen = font["segment_k"].glyphPen()
+	pen.moveTo(0, 0)
+	pen.lineTo(0, diagonal_y_offset)
+	pen.lineTo(quadrant_w - diagonal_x_offset, quadrant_h)
+	pen.lineTo(quadrant_w, quadrant_h)
+	pen.lineTo(quadrant_w, quadrant_h - diagonal_y_offset)
+	pen.lineTo(diagonal_x_offset, 0)
+	pen.closePath()
+	pen = None
+	font["segment_k"].transform((1, 0, 0, 1, side_bearing + SEGMENT_THICKNESS + SEGMENT_GAP, SEGMENT_THICKNESS + SEGMENT_GAP))
 
 font.createChar(-1, "segment_r")
 circle = fontforge.unitShape(0) # creates a unit circle
@@ -174,26 +182,28 @@ font["segment_b"].unlinkRef()
 font.createChar(-1, "segment_f")
 font["segment_f"].addReference("segment_e", (1, 0, 0, 1, 0, vertical_midpoint - min(half_thickness, MAX_CORNER_SIZE)))
 font["segment_f"].unlinkRef()
-font.createChar(-1, "segment_h")
-font["segment_h"].addReference("segment_k", (1, 0, 0, -1, 0, CAP_HEIGHT))
-font["segment_h"].unlinkRef()
-font["segment_h"].correctDirection()
-font.createChar(-1, "segment_i")
-font["segment_i"].addReference("segment_l", (1, 0, 0, -1, 0, CAP_HEIGHT))
-font["segment_i"].unlinkRef()
-font["segment_i"].correctDirection()
-font.createChar(-1, "segment_j")
-font["segment_j"].addReference("segment_k", (-1, 0, 0, -1, ADVANCE_WIDTH, CAP_HEIGHT))
-font["segment_j"].unlinkRef()
-font.createChar(-1, "segment_m")
-font["segment_m"].addReference("segment_h", (-1, 0, 0, -1, ADVANCE_WIDTH, CAP_HEIGHT))
-font["segment_m"].unlinkRef()
-font.createChar(-1, "segment_n")
-font["segment_n"].addReference("segment_g", (1, 0, 0, 1, glyph_width // 2 - half_thickness, 0))
-font.createChar(-1, "segment_o")
-font["segment_o"].addReference("segment_d", (-1, 0, 0, -1, ADVANCE_WIDTH, CAP_HEIGHT))
-font.createChar(-1, "segment_p")
-font["segment_p"].addReference("segment_a", (-1, 0, 0, -1, ADVANCE_WIDTH, CAP_HEIGHT))
+if SEGMENT_COUNT > 7:
+	font.createChar(-1, "segment_h")
+	font["segment_h"].addReference("segment_k", (1, 0, 0, -1, 0, CAP_HEIGHT))
+	font["segment_h"].unlinkRef()
+	font["segment_h"].correctDirection()
+	font.createChar(-1, "segment_i")
+	font["segment_i"].addReference("segment_l", (1, 0, 0, -1, 0, CAP_HEIGHT))
+	font["segment_i"].unlinkRef()
+	font["segment_i"].correctDirection()
+	font.createChar(-1, "segment_j")
+	font["segment_j"].addReference("segment_k", (-1, 0, 0, -1, ADVANCE_WIDTH, CAP_HEIGHT))
+	font["segment_j"].unlinkRef()
+	font.createChar(-1, "segment_m")
+	font["segment_m"].addReference("segment_h", (-1, 0, 0, -1, ADVANCE_WIDTH, CAP_HEIGHT))
+	font["segment_m"].unlinkRef()
+	font.createChar(-1, "segment_n")
+	font["segment_n"].addReference("segment_g", (1, 0, 0, 1, glyph_width // 2 - half_thickness, 0))
+if SEGMENT_COUNT == 16:
+	font.createChar(-1, "segment_o")
+	font["segment_o"].addReference("segment_d", (-1, 0, 0, -1, ADVANCE_WIDTH, CAP_HEIGHT))
+	font.createChar(-1, "segment_p")
+	font["segment_p"].addReference("segment_a", (-1, 0, 0, -1, ADVANCE_WIDTH, CAP_HEIGHT))
 
 # add defined glyphs
 memo = {}
@@ -225,8 +235,13 @@ font.copyright = "Copyright 2023 Brad Neil"
 if SEGMENT_COUNT == 7 and SEGMENT_THICKNESS != 76 and SEGMENT_THICKNESS != 130:
 	font.appendSFNTName("English (US)", 16, "Quixotic " + FONTNAME_MAP[SEGMENT_COUNT])
 	font.appendSFNTName("English (US)", 17, FONTNAME_MAP[SEGMENT_THICKNESS])
+font.appendSFNTName("English (US)", 9, "Brad Neil")
+font.appendSFNTName("English (US)", 12, "http://friedorange.xyz/")
+font.appendSFNTName("English (US)", 13, "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL")
+font.appendSFNTName("English (US)", 14, "https://scripts.sil.org/OFL")
+font.version = "1.000"
 
-# set metrics
+# set metrics etc
 font.os2_winascent_add = False
 font.os2_winascent = 800
 font.os2_windescent_add = False
@@ -243,6 +258,11 @@ font.hhea_descent = -200
 font.hhea_linegap = 0
 font.os2_use_typo_metrics = True
 font.os2_weight_width_slope_only = True
+font.os2_weight = WEIGHT_MAP[SEGMENT_THICKNESS]
+font.upos = int(SEGMENT_THICKNESS * 1.5)
+font.uwidth = SEGMENT_THICKNESS
+font.os2_strikeypos = vertical_midpoint - half_thickness
+font.os2_strikeysize = SEGMENT_THICKNESS
 
 # finished
 font.save("source\\temp\\temp.sfd")

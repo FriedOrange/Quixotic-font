@@ -232,8 +232,6 @@
       <string>segment_j</string>
       <string>segment_m</string>
       <string>segment_n</string>
-      <string>segment_o</string>
-      <string>segment_p</string>
       <string>test</string>
     </array>
     <key>public.openTypeCategories</key>
@@ -467,10 +465,6 @@
       <key>segment_m</key>
       <string>base</string>
       <key>segment_n</key>
-      <string>base</string>
-      <key>segment_o</key>
-      <string>base</string>
-      <key>segment_p</key>
       <string>base</string>
       <key>segment_r</key>
       <string>base</string>

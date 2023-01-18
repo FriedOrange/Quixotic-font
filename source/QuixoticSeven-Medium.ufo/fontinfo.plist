@@ -15,13 +15,21 @@
     <key>note</key>
     <string>2023-1-18: Created with FontForge (http://fontforge.org)</string>
     <key>openTypeHeadCreated</key>
-    <string>2023/01/17 13:41:12</string>
+    <string>2023/01/18 09:05:56</string>
     <key>openTypeHheaAscender</key>
     <integer>1000</integer>
     <key>openTypeHheaDescender</key>
     <integer>-200</integer>
     <key>openTypeHheaLineGap</key>
     <integer>0</integer>
+    <key>openTypeNameDesigner</key>
+    <string>Brad Neil</string>
+    <key>openTypeNameDesignerURL</key>
+    <string>http://friedorange.xyz/</string>
+    <key>openTypeNameLicense</key>
+    <string>This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL</string>
+    <key>openTypeNameLicenseURL</key>
+    <string>https://scripts.sil.org/OFL</string>
     <key>openTypeNamePreferredFamilyName</key>
     <string>Quixotic Seven</string>
     <key>openTypeNamePreferredSubfamilyName</key>
@@ -45,9 +53,9 @@
       <integer>7</integer>
     </array>
     <key>openTypeOS2StrikeoutPosition</key>
-    <integer>258</integer>
+    <integer>353</integer>
     <key>openTypeOS2StrikeoutSize</key>
-    <integer>49</integer>
+    <integer>94</integer>
     <key>openTypeOS2SubscriptXOffset</key>
     <integer>0</integer>
     <key>openTypeOS2SubscriptXSize</key>
@@ -89,9 +97,9 @@
     <key>postscriptSlantAngle</key>
     <real>0.0</real>
     <key>postscriptUnderlinePosition</key>
-    <real>-75.0</real>
+    <real>188.0</real>
     <key>postscriptUnderlineThickness</key>
-    <real>50.0</real>
+    <real>94.0</real>
     <key>postscriptWeightName</key>
     <string>Regular</string>
     <key>styleName</key>

@@ -9,6 +9,5 @@
     <component base="segment_e"/>
     <component base="segment_f"/>
     <component base="segment_g"/>
-    <component base="segment_p"/>
   </outline>
 </glyph>
