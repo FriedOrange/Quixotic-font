@@ -93,6 +93,7 @@ braceleft,gbc
 bar,bc
 braceright,feg
 asciitilde,a
+uni00A0,
 sterling,fedg
 brokenbar,bc
 section,afgcd
@@ -210,4 +211,4 @@ u1047c,efabc
 u1047d,egca
 u1047e,ega
 u1047f,fegc
-test,abcdefgr
+unie000,abcdefgr
