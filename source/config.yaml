@@ -14,3 +14,5 @@ sources:
   # - QuixoticFourteen-Oblique.ufo
   # - QuixoticSixteen-Oblique.ufo
 familyName: "Quixotic"
+buildOTF: false
+buildVariable: false
