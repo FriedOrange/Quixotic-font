@@ -3,6 +3,13 @@
   <advance width="633"/>
   <unicode hex="002D"/>
   <outline>
-    <component base="segment_g"/>
+    <contour>
+      <point x="144.0" y="400.0" type="line" smooth="yes"/>
+      <point x="172.0" y="428.0" type="line" smooth="yes"/>
+      <point x="461.0" y="428.0" type="line" smooth="yes"/>
+      <point x="489.0" y="400.0" type="line" smooth="yes"/>
+      <point x="461.0" y="372.0" type="line" smooth="yes"/>
+      <point x="172.0" y="372.0" type="line" smooth="yes"/>
+    </contour>
   </outline>
 </glyph>

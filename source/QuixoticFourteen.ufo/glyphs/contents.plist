@@ -206,36 +206,6 @@
     <string>second.glif</string>
     <key>section</key>
     <string>section.glif</string>
-    <key>segment_a</key>
-    <string>segment_a.glif</string>
-    <key>segment_b</key>
-    <string>segment_b.glif</string>
-    <key>segment_c</key>
-    <string>segment_c.glif</string>
-    <key>segment_d</key>
-    <string>segment_d.glif</string>
-    <key>segment_e</key>
-    <string>segment_e.glif</string>
-    <key>segment_f</key>
-    <string>segment_f.glif</string>
-    <key>segment_g</key>
-    <string>segment_g.glif</string>
-    <key>segment_h</key>
-    <string>segment_h.glif</string>
-    <key>segment_i</key>
-    <string>segment_i.glif</string>
-    <key>segment_j</key>
-    <string>segment_j.glif</string>
-    <key>segment_k</key>
-    <string>segment_k.glif</string>
-    <key>segment_l</key>
-    <string>segment_l.glif</string>
-    <key>segment_m</key>
-    <string>segment_m.glif</string>
-    <key>segment_n</key>
-    <string>segment_n.glif</string>
-    <key>segment_r</key>
-    <string>segment_r.glif</string>
     <key>semicolon</key>
     <string>semicolon.glif</string>
     <key>seven</key>
@@ -250,8 +220,6 @@
     <string>sterling.glif</string>
     <key>t</key>
     <string>t.glif</string>
-    <key>test</key>
-    <string>test.glif</string>
     <key>three</key>
     <string>three.glif</string>
     <key>two</key>
@@ -356,6 +324,10 @@
     <string>u1047f.glif</string>
     <key>underscore</key>
     <string>underscore.glif</string>
+    <key>uni00A0</key>
+    <string>uni00A_0.glif</string>
+    <key>unie000</key>
+    <string>unie000.glif</string>
     <key>unie650</key>
     <string>unie650.glif</string>
     <key>unie651</key>

@@ -100,6 +100,7 @@
       <string>bar</string>
       <string>braceright</string>
       <string>asciitilde</string>
+      <string>uni00A0</string>
       <string>sterling</string>
       <string>brokenbar</string>
       <string>section</string>
@@ -123,6 +124,7 @@
       <string>minute</string>
       <string>second</string>
       <string>Euro</string>
+      <string>unie000</string>
       <string>unie650</string>
       <string>unie651</string>
       <string>unie652</string>
@@ -217,24 +219,6 @@
       <string>u1047d</string>
       <string>u1047e</string>
       <string>u1047f</string>
-      <string>segment_d</string>
-      <string>segment_e</string>
-      <string>segment_g</string>
-      <string>segment_l</string>
-      <string>segment_k</string>
-      <string>segment_r</string>
-      <string>segment_a</string>
-      <string>segment_c</string>
-      <string>segment_b</string>
-      <string>segment_f</string>
-      <string>segment_h</string>
-      <string>segment_i</string>
-      <string>segment_j</string>
-      <string>segment_m</string>
-      <string>segment_n</string>
-      <string>segment_o</string>
-      <string>segment_p</string>
-      <string>test</string>
     </array>
     <key>public.openTypeCategories</key>
     <dict>
@@ -440,40 +424,6 @@
       <string>base</string>
       <key>section</key>
       <string>base</string>
-      <key>segment_a</key>
-      <string>base</string>
-      <key>segment_b</key>
-      <string>base</string>
-      <key>segment_c</key>
-      <string>base</string>
-      <key>segment_d</key>
-      <string>base</string>
-      <key>segment_e</key>
-      <string>base</string>
-      <key>segment_f</key>
-      <string>base</string>
-      <key>segment_g</key>
-      <string>base</string>
-      <key>segment_h</key>
-      <string>base</string>
-      <key>segment_i</key>
-      <string>base</string>
-      <key>segment_j</key>
-      <string>base</string>
-      <key>segment_k</key>
-      <string>base</string>
-      <key>segment_l</key>
-      <string>base</string>
-      <key>segment_m</key>
-      <string>base</string>
-      <key>segment_n</key>
-      <string>base</string>
-      <key>segment_o</key>
-      <string>base</string>
-      <key>segment_p</key>
-      <string>base</string>
-      <key>segment_r</key>
-      <string>base</string>
       <key>semicolon</key>
       <string>base</string>
       <key>seven</key>
@@ -487,8 +437,6 @@
       <key>sterling</key>
       <string>base</string>
       <key>t</key>
-      <string>base</string>
-      <key>test</key>
       <string>base</string>
       <key>three</key>
       <string>base</string>
@@ -593,6 +541,10 @@
       <key>u1047f</key>
       <string>base</string>
       <key>underscore</key>
+      <string>base</string>
+      <key>uni00A0</key>
+      <string>base</string>
+      <key>unie000</key>
       <string>base</string>
       <key>unie650</key>
       <string>base</string>
