@@ -1,21 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="colon" format="2">
-  <advance width="633"/>
+  <advance width="583"/>
   <unicode hex="003A"/>
   <outline>
     <contour>
-      <point x="288.0" y="76.0" type="line" smooth="yes"/>
-      <point x="288.0" y="358.0" type="line" smooth="yes"/>
-      <point x="316.0" y="386.0" type="line" smooth="yes"/>
-      <point x="344.0" y="358.0" type="line" smooth="yes"/>
-      <point x="344.0" y="76.0" type="line" smooth="yes"/>
+      <point x="264.0" y="76.0" type="line" smooth="yes"/>
+      <point x="264.0" y="358.0" type="line" smooth="yes"/>
+      <point x="292.0" y="386.0" type="line" smooth="yes"/>
+      <point x="320.0" y="358.0" type="line" smooth="yes"/>
+      <point x="320.0" y="76.0" type="line" smooth="yes"/>
     </contour>
     <contour>
-      <point x="288.0" y="724.0" type="line" smooth="yes"/>
-      <point x="344.0" y="724.0" type="line" smooth="yes"/>
-      <point x="344.0" y="442.0" type="line" smooth="yes"/>
-      <point x="316.0" y="414.0" type="line" smooth="yes"/>
-      <point x="288.0" y="442.0" type="line" smooth="yes"/>
+      <point x="264.0" y="724.0" type="line" smooth="yes"/>
+      <point x="320.0" y="724.0" type="line" smooth="yes"/>
+      <point x="320.0" y="442.0" type="line" smooth="yes"/>
+      <point x="292.0" y="414.0" type="line" smooth="yes"/>
+      <point x="264.0" y="442.0" type="line" smooth="yes"/>
     </contour>
   </outline>
 </glyph>
