@@ -4,15 +4,15 @@ sources:
   - QuixoticSeven-Medium.ufo
   - QuixoticSeven-Semibold.ufo
   - QuixoticSeven-Bold.ufo
-  - QuixoticFourteen.ufo
-  - QuixoticSixteen.ufo
-  # - QuixoticSeven-LightOblique.ufo
-  # - QuixoticSeven-Oblique.ufo
-  # - QuixoticSeven-MediumOblique.ufo
-  # - QuixoticSeven-SemiboldOblique.ufo
-  # - QuixoticSeven-BoldOblique.ufo
-  # - QuixoticFourteen-Oblique.ufo
-  # - QuixoticSixteen-Oblique.ufo
+  - QuixoticFourteen-Regular.ufo
+  - QuixoticSixteen-Regular.ufo
+  - QuixoticSeven-LightItalic.ufo
+  - QuixoticSeven-Italic.ufo
+  - QuixoticSeven-MediumItalic.ufo
+  - QuixoticSeven-SemiboldItalic.ufo
+  - QuixoticSeven-BoldItalic.ufo
+  - QuixoticFourteen-Italic.ufo
+  - QuixoticSixteen-Italic.ufo
 familyName: "Quixotic"
 buildOTF: false
 buildVariable: false

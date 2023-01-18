@@ -12,30 +12,8 @@ SEGMENT_GAP = 20
 ADVANCE_WIDTH = 583
 SEGMENT_COUNT = int(sys.argv[2])
 MAX_CORNER_SIZE = 38
-FONTNAME_MAP = {
-	7: "Seven",
-	14: "Fourteen",
-	16: "Sixteen",
-	56: "Light",
-	76: "Regular",
-	94: "Medium",
-	112: "Semibold",
-	130: "Bold"
-}
-FAMILYNAME_MAP = {
-	56: " Light",
-	76: "",
-	94: " Medium",
-	112: " Semibold",
-	130: ""
-}
-WEIGHT_MAP = {
-	56: 300,
-	76: 400,
-	94: 500,
-	112: 600,
-	130: 700
-}
+SLANT_ANGLE = float(sys.argv[5])
+is_oblique = SLANT_ANGLE != 0
 
 # read segment definitions (CSV)
 with open(sys.argv[3]) as csv_file:
@@ -227,6 +205,29 @@ if SEGMENT_COUNT == 7:
 	font["colon"].addReference("segment_r", (1, 0, 0, 1, horizontal_midpoint // 3 - ADVANCE_WIDTH, 7 * CAP_HEIGHT // 10))
 	font["colon"].width = ADVANCE_WIDTH // 3
 
+if is_oblique:
+	font.selection.select(("more", None), "segment_a")
+	font.selection.select(("more", None), "segment_b")
+	font.selection.select(("more", None), "segment_c")
+	font.selection.select(("more", None), "segment_d")
+	font.selection.select(("more", None), "segment_e")
+	font.selection.select(("more", None), "segment_f")
+	font.selection.select(("more", None), "segment_g")
+	font.selection.select(("more", None), "segment_r")
+	if SEGMENT_COUNT > 7:
+		font.selection.select(("more", None), "segment_h")
+		font.selection.select(("more", None), "segment_i")
+		font.selection.select(("more", None), "segment_j")
+		font.selection.select(("more", None), "segment_k")
+		font.selection.select(("more", None), "segment_l")
+		font.selection.select(("more", None), "segment_m")
+		font.selection.select(("more", None), "segment_n")
+	if SEGMENT_COUNT > 14:
+		font.selection.select(("more", None), "segment_o")
+		font.selection.select(("more", None), "segment_p")
+	font.italicangle = SLANT_ANGLE
+	font.italicize(italic_angle=SLANT_ANGLE)
+
 # eliminate segment glyphs
 font["segment_a"].unlinkThisGlyph()
 font["segment_b"].unlinkThisGlyph()
@@ -265,19 +266,71 @@ if SEGMENT_COUNT > 14:
 	font["segment_o"].clear()
 	font["segment_p"].clear()
 
+FONTNAME_MAP = {
+	7: "Seven",
+	14: "Fourteen",
+	16: "Sixteen",
+	56: "Light",
+	76: "" if is_oblique else "Regular",
+	94: "Medium",
+	112: "Semibold",
+	130: "Bold"
+}
+FAMILYNAME_MAP = {
+	56: " Light",
+	76: "",
+	94: " Medium",
+	112: " Semibold",
+	130: ""
+}
+STYLENAME_MAP = {
+	56: "Light",
+	76: "Regular",
+	94: "Medium",
+	112: "Semibold",
+	130: "Bold"
+}
+WEIGHT_MAP = {
+	56: 300,
+	76: 400,
+	94: 500,
+	112: 600,
+	130: 700
+}
+
 # add font names
-font.fontname = "Quixotic" + FONTNAME_MAP[SEGMENT_COUNT] + "-" + (FONTNAME_MAP[SEGMENT_THICKNESS] if SEGMENT_COUNT == 7 else "Regular")
-font.familyname = "Quixotic " + FONTNAME_MAP[SEGMENT_COUNT] + (FAMILYNAME_MAP[SEGMENT_THICKNESS] if SEGMENT_COUNT == 7 else "")
-font.fullname = font.familyname + (" Bold" if SEGMENT_THICKNESS == 130 else "")
-font.copyright = "Copyright 2023 Brad Neil"
-if SEGMENT_COUNT == 7 and SEGMENT_THICKNESS != 76 and SEGMENT_THICKNESS != 130:
-	font.appendSFNTName("English (US)", 16, "Quixotic " + FONTNAME_MAP[SEGMENT_COUNT])
-	font.appendSFNTName("English (US)", 17, FONTNAME_MAP[SEGMENT_THICKNESS])
+if SEGMENT_COUNT == 7:
+	font.fontname = "QuixoticSeven-" + FONTNAME_MAP[SEGMENT_THICKNESS] + ("Italic" if is_oblique else "")
+	font.familyname = "Quixotic Seven" + FAMILYNAME_MAP[SEGMENT_THICKNESS]
+	font.fullname = font.familyname + (" Bold" if SEGMENT_THICKNESS == 130 else "") + (" Italic" if is_oblique else "")
+	if SEGMENT_THICKNESS == 130 and is_oblique:
+		font.appendSFNTName("English (US)", 2, "Bold Italic")
+	elif SEGMENT_THICKNESS == 130:
+		font.appendSFNTName("English (US)", 2, "Bold")
+	elif is_oblique:
+		font.appendSFNTName("English (US)", 2, "Italic")
+	else:
+		font.appendSFNTName("English (US)", 2, "Regular")
+	# if FAMILYNAME_MAP[SEGMENT_THICKNESS]:
+	# 	font.appendSFNTName("English (US)", 16, "Quixotic Seven")
+	# 	font.appendSFNTName("English (US)", 17, FONTNAME_MAP[SEGMENT_THICKNESS] + (" Italic" if is_oblique else ""))
+else:
+	font.fontname = "Quixotic" + FONTNAME_MAP[SEGMENT_COUNT] + ("-Italic" if is_oblique else "-Regular")
+	font.familyname = "Quixotic " + FONTNAME_MAP[SEGMENT_COUNT]
+	font.fullname = font.familyname + (" Italic" if is_oblique else "")
+
+# font.fontname = "Quixotic" + FONTNAME_MAP[SEGMENT_COUNT] + "-" + (FONTNAME_MAP[SEGMENT_THICKNESS] + ("Italic" if is_oblique else "") if SEGMENT_COUNT == 7 else ("Italic" if is_oblique else "Regular"))
+# font.familyname = "Quixotic " + FONTNAME_MAP[SEGMENT_COUNT] + (FAMILYNAME_MAP[SEGMENT_THICKNESS] if SEGMENT_COUNT == 7 else "")
+# font.fullname = font.familyname + (" Bold" if SEGMENT_THICKNESS == 130 else "") + (" Italic" if is_oblique else "")
+# if SEGMENT_COUNT == 7 and SEGMENT_THICKNESS != 76 and SEGMENT_THICKNESS != 130:
+	# font.appendSFNTName("English (US)", 16, "Quixotic " + FONTNAME_MAP[SEGMENT_COUNT])
+	# font.appendSFNTName("English (US)", 17, FONTNAME_MAP[SEGMENT_THICKNESS] + (" Italic" if is_oblique else ""))
 font.appendSFNTName("English (US)", 9, "Brad Neil")
 font.appendSFNTName("English (US)", 12, "http://friedorange.xyz/")
 font.appendSFNTName("English (US)", 13, "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL")
 font.appendSFNTName("English (US)", 14, "https://scripts.sil.org/OFL")
 font.version = "1.000"
+font.copyright = "Copyright 2023 Brad Neil"
 
 # set metrics etc
 font.os2_winascent_add = False
@@ -303,6 +356,14 @@ font.os2_strikeypos = vertical_midpoint - half_thickness
 font.os2_strikeysize = SEGMENT_THICKNESS
 if SEGMENT_COUNT == 7:
 	font.os2_panose = (2, 0, 0, 0, 0, 0, 0, 0, 0, 0) # proportion was being automatically (and wrongly) set to Monospace
+	if SEGMENT_THICKNESS == 130:
+		font.os2_stylemap = 32 # bold
+	if SEGMENT_THICKNESS == 76 and not is_oblique:
+		font.os2_stylemap = 64 # regular
+else:
+	font.os2_stylemap = 1 if is_oblique else 64
+if is_oblique:
+	font.os2_stylemap |= 1 # italic
 
 # finished
 font.save("source\\temp\\temp.sfd")

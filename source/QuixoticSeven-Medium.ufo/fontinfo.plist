@@ -13,9 +13,9 @@
     <key>italicAngle</key>
     <real>0.0</real>
     <key>note</key>
-    <string>2023-1-18: Created with FontForge (http://fontforge.org)</string>
+    <string>2023-1-19: Created with FontForge (http://fontforge.org)</string>
     <key>openTypeHeadCreated</key>
-    <string>2023/01/18 10:13:00</string>
+    <string>2023/01/18 14:12:51</string>
     <key>openTypeHheaAscender</key>
     <integer>1000</integer>
     <key>openTypeHheaDescender</key>
@@ -30,10 +30,6 @@
     <string>This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL</string>
     <key>openTypeNameLicenseURL</key>
     <string>https://scripts.sil.org/OFL</string>
-    <key>openTypeNamePreferredFamilyName</key>
-    <string>Quixotic Seven</string>
-    <key>openTypeNamePreferredSubfamilyName</key>
-    <string>Medium</string>
     <key>openTypeOS2Panose</key>
     <array>
       <integer>2</integer>
@@ -103,7 +99,7 @@
     <key>postscriptWeightName</key>
     <string>Regular</string>
     <key>styleName</key>
-    <string>Medium</string>
+    <string>Regular</string>
     <key>unitsPerEm</key>
     <integer>1000</integer>
     <key>versionMajor</key>

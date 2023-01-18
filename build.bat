@@ -10,5 +10,5 @@ python %USERPROFILE%\AppData\Local\Programs\Python\Python310\Scripts\gftools-bui
 
 @cd fonts\ttf
 set PYTHONUTF8=1
-python %USERPROFILE%\AppData\Local\Programs\Python\Python310\Scripts\gftools-gen-html.py proof -o ..\proof QuixoticFourteen.ttf QuixoticSeven-Bold.ttf QuixoticSeven-Light.ttf QuixoticSeven-Medium.ttf QuixoticSeven-Regular.ttf QuixoticSeven-Semibold.ttf QuixoticSixteen.ttf
+python %USERPROFILE%\AppData\Local\Programs\Python\Python310\Scripts\gftools-gen-html.py proof -o ..\proof QuixoticFourteen-Regular.ttf QuixoticSeven-Bold.ttf QuixoticSeven-Light.ttf QuixoticSeven-Medium.ttf QuixoticSeven-Regular.ttf QuixoticSeven-Semibold.ttf QuixoticSixteen-Regular.ttf QuixoticFourteen-Italic.ttf QuixoticSeven-BoldItalic.ttf QuixoticSeven-LightItalic.ttf QuixoticSeven-MediumItalic.ttf QuixoticSeven-Italic.ttf QuixoticSeven-SemiboldItalic.ttf QuixoticSixteen-Italic.ttf
 @cd ..\..

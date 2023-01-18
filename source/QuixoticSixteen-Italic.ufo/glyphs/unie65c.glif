@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="unie65c" format="2">
+  <advance width="583"/>
+  <unicode hex="E65C"/>
+  <outline>
+    <contour>
+      <point x="474.934570312" y="28.0" type="line" smooth="yes"/>
+      <point x="447.934570312" y="0.0" type="line" smooth="yes"/>
+      <point x="322.934570312" y="0.0" type="line" smooth="yes"/>
+      <point x="325.934570312" y="56.0" type="line" smooth="yes"/>
+      <point x="450.934570312" y="56.0" type="line" smooth="yes"/>
+    </contour>
+    <contour>
+      <point x="144.0" y="76.0" type="line" smooth="yes"/>
+      <point x="150.0" y="183.0" type="line" smooth="yes"/>
+      <point x="233.0" y="352.0" type="line" smooth="yes"/>
+      <point x="242.0" y="352.0" type="line" smooth="yes"/>
+      <point x="237.0" y="245.0" type="line" smooth="yes"/>
+      <point x="153.0" y="76.0" type="line" smooth="yes"/>
+    </contour>
+    <contour>
+      <point x="278.0" y="724.0" type="line" smooth="yes"/>
+      <point x="330.0" y="724.0" type="line" smooth="yes"/>
+      <point x="315.0" y="442.0" type="line" smooth="yes"/>
+      <point x="288.0" y="414.0" type="line" smooth="yes"/>
+      <point x="263.0" y="442.0" type="line" smooth="yes"/>
+    </contour>
+    <contour>
+      <point x="111.0" y="28.0" type="line" smooth="yes"/>
+      <point x="138.0" y="56.0" type="line" smooth="yes"/>
+      <point x="263.0" y="56.0" type="line" smooth="yes"/>
+      <point x="260.0" y="0.0" type="line" smooth="yes"/>
+      <point x="135.0" y="0.0" type="line" smooth="yes"/>
+    </contour>
+  </outline>
+</glyph>
