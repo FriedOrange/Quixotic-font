@@ -4,7 +4,9 @@ This is a font family for the Quikscript and Shaw (Shavian) alphabets, in the st
 
 ## Software requirements
 
-Ensure Python and FontForge are installed, and both are in your PATH environment variable (so they can be invoked from the command line). Additionally, ensure FontForge's Python module is accessible to your Python interpreter (it may need to be manually copied into the appropriate location). Finally, the root of the repo, run the command `pip -r requirements.txt` to install the necessary Python packages.
+- Ensure Python and FontForge are installed, and both are in your PATH environment variable (so they can be invoked from the command line).
+- Ensure FontForge's Python module is accessible to your Python interpreter (it may need to be manually copied into the appropriate location).
+- From the root of the repo, run the command `pip -r requirements.txt` to install the necessary Python packages.
 
 ## Building
 
