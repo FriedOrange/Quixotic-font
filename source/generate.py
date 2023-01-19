@@ -150,6 +150,7 @@ if SEGMENT_COUNT == 7:
 	font["segment_a"].addReference("segment_d", (-1, 0, 0, -1, ADVANCE_WIDTH, CAP_HEIGHT))
 else:
 	font["segment_a"].addReference("segment_d", (1, 0, 0, 1, 0, CAP_HEIGHT - SEGMENT_THICKNESS))
+font["segment_a"].unlinkRef()
 font.createChar(-1, "segment_c")
 font["segment_c"].addReference("segment_e", (-1, 0, 0, 1, character_gap + glyph_width, 0))
 font["segment_c"].unlinkRef()
@@ -180,8 +181,10 @@ if SEGMENT_COUNT > 7:
 if SEGMENT_COUNT == 16:
 	font.createChar(-1, "segment_o")
 	font["segment_o"].addReference("segment_d", (-1, 0, 0, -1, ADVANCE_WIDTH, CAP_HEIGHT))
+	font["segment_o"].unlinkRef()
 	font.createChar(-1, "segment_p")
 	font["segment_p"].addReference("segment_a", (-1, 0, 0, -1, ADVANCE_WIDTH, CAP_HEIGHT))
+	font["segment_p"].unlinkRef()
 
 # add defined glyphs
 memo = {}
@@ -311,6 +314,8 @@ if SEGMENT_COUNT == 7:
 		font.appendSFNTName("English (US)", 2, "Italic")
 	else:
 		font.appendSFNTName("English (US)", 2, "Regular")
+	# unfortunately, adding Typographic Family/Style names makes fontmake do very very strange and annoying things with the other names....
+	# need to patch these in afterwards instead, using ttx
 	# if FAMILYNAME_MAP[SEGMENT_THICKNESS]:
 	# 	font.appendSFNTName("English (US)", 16, "Quixotic Seven")
 	# 	font.appendSFNTName("English (US)", 17, FONTNAME_MAP[SEGMENT_THICKNESS] + (" Italic" if is_oblique else ""))
@@ -319,12 +324,6 @@ else:
 	font.familyname = "Quixotic " + FONTNAME_MAP[SEGMENT_COUNT]
 	font.fullname = font.familyname + (" Italic" if is_oblique else "")
 
-# font.fontname = "Quixotic" + FONTNAME_MAP[SEGMENT_COUNT] + "-" + (FONTNAME_MAP[SEGMENT_THICKNESS] + ("Italic" if is_oblique else "") if SEGMENT_COUNT == 7 else ("Italic" if is_oblique else "Regular"))
-# font.familyname = "Quixotic " + FONTNAME_MAP[SEGMENT_COUNT] + (FAMILYNAME_MAP[SEGMENT_THICKNESS] if SEGMENT_COUNT == 7 else "")
-# font.fullname = font.familyname + (" Bold" if SEGMENT_THICKNESS == 130 else "") + (" Italic" if is_oblique else "")
-# if SEGMENT_COUNT == 7 and SEGMENT_THICKNESS != 76 and SEGMENT_THICKNESS != 130:
-	# font.appendSFNTName("English (US)", 16, "Quixotic " + FONTNAME_MAP[SEGMENT_COUNT])
-	# font.appendSFNTName("English (US)", 17, FONTNAME_MAP[SEGMENT_THICKNESS] + (" Italic" if is_oblique else ""))
 font.appendSFNTName("English (US)", 9, "Brad Neil")
 font.appendSFNTName("English (US)", 12, "http://friedorange.xyz/")
 font.appendSFNTName("English (US)", 13, "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL")

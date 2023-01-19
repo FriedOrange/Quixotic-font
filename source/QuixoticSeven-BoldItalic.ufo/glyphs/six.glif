@@ -44,12 +44,12 @@
       <point x="472.0" y="90.0" type="line" smooth="yes"/>
     </contour>
     <contour>
-      <point x="509.92578125" y="762.0" type="line" smooth="yes"/>
-      <point x="419.92578125" y="670.0" type="line" smooth="yes"/>
-      <point x="278.92578125" y="670.0" type="line" smooth="yes"/>
-      <point x="198.92578125" y="762.0" type="line" smooth="yes"/>
-      <point x="235.92578125" y="800.0" type="line" smooth="yes"/>
-      <point x="476.92578125" y="800.0" type="line" smooth="yes"/>
+      <point x="464.0" y="762.0" type="line" smooth="yes"/>
+      <point x="374.0" y="670.0" type="line" smooth="yes"/>
+      <point x="234.0" y="670.0" type="line" smooth="yes"/>
+      <point x="153.0" y="762.0" type="line" smooth="yes"/>
+      <point x="190.0" y="800.0" type="line" smooth="yes"/>
+      <point x="431.0" y="800.0" type="line" smooth="yes"/>
     </contour>
   </outline>
 </glyph>
