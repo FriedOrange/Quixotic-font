@@ -209,6 +209,7 @@ if SEGMENT_COUNT == 7:
 	font["colon"].width = ADVANCE_WIDTH // 3
 
 if is_oblique:
+	font.selection.none()
 	font.selection.select(("more", None), "segment_a")
 	font.selection.select(("more", None), "segment_b")
 	font.selection.select(("more", None), "segment_c")
@@ -229,7 +230,9 @@ if is_oblique:
 		font.selection.select(("more", None), "segment_o")
 		font.selection.select(("more", None), "segment_p")
 	font.italicangle = SLANT_ANGLE
-	font.italicize(italic_angle=SLANT_ANGLE)
+	# font.italicize(italic_angle=SLANT_ANGLE)
+	font.transform((1, 0, SLANT_ANGLE*math.pi/180, 1, 0, 0))
+	font.round()
 
 # eliminate segment glyphs
 font["segment_a"].unlinkThisGlyph()

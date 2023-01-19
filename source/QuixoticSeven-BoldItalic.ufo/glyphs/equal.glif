@@ -4,20 +4,20 @@
   <unicode hex="003D"/>
   <outline>
     <contour>
-      <point x="134.0" y="400.0" type="line" smooth="yes"/>
-      <point x="198.0" y="465.0" type="line" smooth="yes"/>
-      <point x="388.0" y="465.0" type="line" smooth="yes"/>
-      <point x="445.0" y="400.0" type="line" smooth="yes"/>
-      <point x="381.0" y="335.0" type="line" smooth="yes"/>
-      <point x="191.0" y="335.0" type="line" smooth="yes"/>
+      <point x="103.0" y="400.0" type="line" smooth="yes"/>
+      <point x="165.0" y="465.0" type="line" smooth="yes"/>
+      <point x="370.0" y="465.0" type="line" smooth="yes"/>
+      <point x="438.0" y="400.0" type="line" smooth="yes"/>
+      <point x="376.0" y="335.0" type="line" smooth="yes"/>
+      <point x="171.0" y="335.0" type="line" smooth="yes"/>
     </contour>
     <contour>
-      <point x="115.0" y="38.0" type="line" smooth="yes"/>
-      <point x="205.0" y="130.0" type="line" smooth="yes"/>
-      <point x="346.0" y="130.0" type="line" smooth="yes"/>
-      <point x="426.0" y="38.0" type="line" smooth="yes"/>
-      <point x="389.0" y="0.0" type="line" smooth="yes"/>
-      <point x="148.0" y="0.0" type="line" smooth="yes"/>
+      <point x="122.0" y="38.0" type="line" smooth="yes"/>
+      <point x="209.0" y="130.0" type="line" smooth="yes"/>
+      <point x="360.0" y="130.0" type="line" smooth="yes"/>
+      <point x="457.0" y="38.0" type="line" smooth="yes"/>
+      <point x="421.0" y="0.0" type="line" smooth="yes"/>
+      <point x="162.0" y="0.0" type="line" smooth="yes"/>
     </contour>
   </outline>
 </glyph>
