@@ -4,12 +4,12 @@
   <unicode hex="2019"/>
   <outline>
     <contour>
-      <point x="391.0" y="724.0" type="line" smooth="yes"/>
-      <point x="397.0" y="617.0" type="line" smooth="yes"/>
-      <point x="326.0" y="448.0" type="line" smooth="yes"/>
-      <point x="316.0" y="448.0" type="line" smooth="yes"/>
-      <point x="310.0" y="555.0" type="line" smooth="yes"/>
-      <point x="381.0" y="724.0" type="line" smooth="yes"/>
+      <point x="467.0" y="724.0" type="line" smooth="yes"/>
+      <point x="461.0" y="617.0" type="line" smooth="yes"/>
+      <point x="372.0" y="448.0" type="line" smooth="yes"/>
+      <point x="362.0" y="448.0" type="line" smooth="yes"/>
+      <point x="368.0" y="555.0" type="line" smooth="yes"/>
+      <point x="457.0" y="724.0" type="line" smooth="yes"/>
     </contour>
   </outline>
 </glyph>

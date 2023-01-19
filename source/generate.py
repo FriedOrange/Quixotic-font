@@ -231,7 +231,7 @@ if is_oblique:
 		font.selection.select(("more", None), "segment_p")
 	font.italicangle = SLANT_ANGLE
 	# font.italicize(italic_angle=SLANT_ANGLE)
-	font.transform((1, 0, SLANT_ANGLE*math.pi/180, 1, 0, 0))
+	font.transform((1, 0, -SLANT_ANGLE*math.pi/180, 1, 0, 0))
 	font.round()
 
 # eliminate segment glyphs
