@@ -15,7 +15,7 @@ for style in ("Light", "Medium", "Semibold"):
     {"Italic" if italic else "Regular"}
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      1.000;NONE;QuixoticSeven-{style}{"Italic" if italic else ""}
+      1.001;NONE;QuixoticSeven-{style}{"Italic" if italic else ""}
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Quixotic Seven {style}{" Italic" if italic else ""}

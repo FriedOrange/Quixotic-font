@@ -202,10 +202,10 @@ for glyph, segments in segment_definitions:
 
 # exception for seven segment style
 if SEGMENT_COUNT == 7:
-	font["period"].transform((1, 0, 0, 1, -ADVANCE_WIDTH, 0))
+	font["period"].transform((1, 0, 0, 1, -ADVANCE_WIDTH, -30))
 	font["colon"].clear()
-	font["colon"].addReference("segment_r", (1, 0, 0, 1, horizontal_midpoint // 3 - ADVANCE_WIDTH, 3 * CAP_HEIGHT // 10))
-	font["colon"].addReference("segment_r", (1, 0, 0, 1, horizontal_midpoint // 3 - ADVANCE_WIDTH, 7 * CAP_HEIGHT // 10))
+	font["colon"].addReference("segment_r", (1, 0, 0, 1, horizontal_midpoint // 3 - ADVANCE_WIDTH + 3 * CAP_HEIGHT // 10 * math.tan(-SLANT_ANGLE*math.pi/180), 3 * CAP_HEIGHT // 10))
+	font["colon"].addReference("segment_r", (1, 0, 0, 1, horizontal_midpoint // 3 - ADVANCE_WIDTH + 7 * CAP_HEIGHT // 10 * math.tan(-SLANT_ANGLE*math.pi/180), 7 * CAP_HEIGHT // 10))
 	font["colon"].width = ADVANCE_WIDTH // 3
 
 if is_oblique:
@@ -226,7 +226,6 @@ if is_oblique:
 		font.selection.select(("more", None), "segment_l")
 		font.selection.select(("more", None), "segment_m")
 		font.selection.select(("more", None), "segment_n")
-		font.selection.select(("more", None), "colon")
 	if SEGMENT_COUNT > 14:
 		font.selection.select(("more", None), "segment_o")
 		font.selection.select(("more", None), "segment_p")
@@ -332,14 +331,14 @@ font.appendSFNTName("English (US)", 9, "Brad Neil")
 font.appendSFNTName("English (US)", 12, "http://friedorange.xyz/")
 font.appendSFNTName("English (US)", 13, "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL")
 font.appendSFNTName("English (US)", 14, "https://scripts.sil.org/OFL")
-font.version = "1.000"
+font.version = "1.001"
 font.copyright = "Copyright 2023 Brad Neil"
 
 # set metrics etc
 font.os2_winascent_add = False
 font.os2_winascent = 800
 font.os2_windescent_add = False
-font.os2_windescent = 70 # value from bold weight
+font.os2_windescent = 100 # value from bold weight
 font.os2_typoascent_add = False
 font.os2_typoascent = 1000
 font.os2_typodescent_add = False
