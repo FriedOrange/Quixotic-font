@@ -217,7 +217,7 @@ if is_oblique:
 	font.selection.select(("more", None), "segment_e")
 	font.selection.select(("more", None), "segment_f")
 	font.selection.select(("more", None), "segment_g")
-	font.selection.select(("more", None), "segment_r")
+	# font.selection.select(("more", None), "segment_r")
 	if SEGMENT_COUNT > 7:
 		font.selection.select(("more", None), "segment_h")
 		font.selection.select(("more", None), "segment_i")
@@ -226,6 +226,7 @@ if is_oblique:
 		font.selection.select(("more", None), "segment_l")
 		font.selection.select(("more", None), "segment_m")
 		font.selection.select(("more", None), "segment_n")
+		font.selection.select(("more", None), "colon")
 	if SEGMENT_COUNT > 14:
 		font.selection.select(("more", None), "segment_o")
 		font.selection.select(("more", None), "segment_p")
