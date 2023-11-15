@@ -12,6 +12,8 @@ To design functional Quikscript and Shavian glyphs for a traditional segmented d
 
 Since no descenders are possible with these types of digital displays, I differentiated the short and long letters with the same method used in some of Haley Wakamatsu’s Shavian fonts [3].
 
+After deciding upon dimensions and designs for the segments, a Python script was used to automatically draw them and composite the glyphs from a list of simple definitions, specifying which segments are “on” in each glyph. This also allowed me to specify the font weight and slant as parameters, so those font variants could be produced quickly and accurately.
+
 There are three variants of Quixotic. All come with a subtly slanted “italic” form in imitation of many real displays:
 
 - Seven: based on the 7-segment display, as used in clocks, calculators and countless other electronic numeric displays. Certain words are viable, like PLAY, HELP, Error and so on, but many Latin letters are non-unique or unrecognisable. In fact, Quikscript fares somewhat better here, as all letters except ·Loch and ·Eat have a recognisable representation even if the deep (descending) letters sit high on the baseline. In imitation of real 7-segment displays, the full stop (period) is a non-spacing character, so it sits between two numbers as a decimal point. This variant is available in five weights, from Light to Bold.
